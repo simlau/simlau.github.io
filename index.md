@@ -3,7 +3,7 @@ title: Simon B. Laursen
 ---
 
 # Simon B. Laursen
-**Freelance Software Engineer & Architect**
+**Lead Software Engineer & Architect**
 
 Backend · Distributed Systems · Cloud & Security  
 Aarhus, Denmark  
