@@ -13,7 +13,7 @@ Aarhus, Denmark
 ---
 
 ## Profile
-Senior software engineer and architect with a strong background in backend development, cloud-native platforms, and security-by-design.
+Lead software engineer and architect with a strong background in backend development, cloud-native platforms, and security-by-design.
 
 I currently work full-time as lead developer and architect at Bankdata. Alongside this, I take on **small, clearly scoped consulting engagements**, helping teams with architectural clarity, security design, and infrastructure maturity.
 
