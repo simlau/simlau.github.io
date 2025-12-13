@@ -8,32 +8,37 @@ title: Simon B. Laursen
 Backend · Distributed Systems · Cloud & Security  
 Aarhus, Denmark  
 
-📧 mail@simlau.dk  
-🔗 GitHub · LinkedIn  
+📧 mail@simlau.dk · 🔗 [GitHub](https://github.com/simlau) · [LinkedIn](https://www.linkedin.com/in/simlau)
 
 ---
 
 ## Profile
-Senior freelance software engineer and architect with a strong background in backend development, cloud-native platforms, and security-by-design.
+Senior software engineer and architect with a strong background in backend development, cloud-native platforms, and security-by-design.
 
-I help organizations design and build robust, scalable systems in regulated environments, with a focus on long-term maintainability and developer productivity.
+I currently work full-time as lead developer and architect at Bankdata. Alongside this, I take on **small, clearly scoped consulting engagements**, helping teams with architectural clarity, security design, and infrastructure maturity.
 
-Currently lead developer and architect at Bankdata, delivering their first cloud-native platform handling sensitive customer data on AWS, processing billions of transactions for more than one million customers.
+Typical engagements include architecture and security reviews, DevOps and platform guidance, and support with technical decision-making in complex or regulated environments.
 
 PhD in Computer Science with a background in distributed systems and formal verification.
 
 ---
 
-## What I do
-- Lead Developer / Technical Lead
-- Backend & event-driven architectures (Java)
-- Cloud-native systems on AWS
-- Security architecture & DevSecOps
-- Mentoring and technical coaching
+## What I help with
+- Architecture reviews and technical assessments
+- Security architecture & security-by-design
+- Cloud and DevOps guidance (AWS, CI/CD, IaC)
+- Event-driven and backend architecture (Java)
+- ADRs, technical decision support, and mentoring
 
 ---
 
 ## Selected Experience
+**Bankdata (Lead Software Developer)**  
+Lead of the **Cloud Application Enablement** team, responsible for building shared foundations that enable feature teams to move safely and efficiently to the cloud. My work centers on platform architecture, developer productivity, and technical governance in a regulated environment.
+
+This includes cloud and DevOps guidance, event-driven architectures using Kafka and CDC-based data integration, and development of internal platform tooling, including a Kubernetes controller written in Go for automated database provisioning for feature teams.
+
+
 **Bankdata (External Consultant)**  
 Lead architect and developer on a large-scale transaction and categorization platform on AWS. Designed an event-driven architecture using Java and Quarkus, integrating ECS Fargate, SQS/SNS, Aurora PostgreSQL, and IBM MQ. Built CI/CD pipelines and infrastructure using Terraform and GitHub Actions.  
 This project marked Bankdata’s first production use of public cloud for customer data.
@@ -47,9 +52,11 @@ Senior security architect focusing on threat modeling, secure system design, and
 ---
 
 ## Technologies
-**Java**, **AWS**, **Terraform**, **Kafka**, **Kubernetes**, **PostgreSQL**, **CI/CD**, **Security Architecture**
+**Java**, **AWS**, **Terraform/OpenTofu**, **Kafka**, **Kubernetes**, **PostgreSQL**, **CI/CD**, **Security Architecture**
 
 ---
 
 ## Availability
-Available for freelance and contract work as **Lead Developer, Software Engineer, or Architect**.
+Available for **small, well-defined consulting tasks**, including architecture and security reviews, DevOps and platform guidance, and short-term technical advisory work.
+
+---
