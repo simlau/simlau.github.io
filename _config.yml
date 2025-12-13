@@ -3,3 +3,7 @@ description: "Experienced software engineer and architect specializing in backen
 theme: jekyll-theme-primer
 
 markdown: kramdown
+
+plugins:
+  - jekyll-sitemap
+
