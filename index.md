@@ -27,16 +27,16 @@ PhD in Computer Science with a background in distributed systems and formal veri
 - Architecture reviews and technical assessments
 - Security architecture & security-by-design
 - Cloud and DevOps guidance (AWS, CI/CD, IaC)
-- Event-driven and backend architecture (Java)
+- Event-driven and backend architecture
 - ADRs, technical decision support, and mentoring
 
 ---
 
 ## Selected Experience
 **Bankdata (Lead Software Developer)**  
-Lead of the **Cloud Application Enablement** team, responsible for building shared foundations that enable feature teams to move safely and efficiently to the cloud. My work centers on platform architecture, developer productivity, and technical governance in a regulated environment.
+Lead of the **Cloud Application Enablement** team, responsible for building shared foundations that enable feature teams to move safely and efficiently to the cloud. 
 
-This includes cloud and DevOps guidance, event-driven architectures using Kafka and CDC-based data integration, and development of internal platform tooling, including a Kubernetes controller written in Go for automated database provisioning for feature teams.
+This includes cloud and DevOps guidance, event-driven architectures using Kafka, CDC-based data integration, and a Kubernetes controller written in Go for automated database provisioning for feature teams.
 
 
 **Bankdata (External Consultant)**  
@@ -52,7 +52,7 @@ Senior security architect focusing on threat modeling, secure system design, and
 ---
 
 ## Technologies
-**Java**, **AWS**, **Terraform/OpenTofu**, **Kafka**, **Kubernetes**, **PostgreSQL**, **CI/CD**, **Security Architecture**
+**Java**, **C#**, **Go**, **AWS**, **Terraform/OpenTofu**, **Kafka**, **Kubernetes**, **PostgreSQL**, **CI/CD**, **Security Architecture**
 
 ---
 
