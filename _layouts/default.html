@@ -366,7 +366,7 @@
   <section class="section" id="about">
     <div class="section-label">About</div>
     <p class="about-text">
-      Software engineer with <strong>10+ years</strong> building reliable and secure systems in regulated environments. I work across <strong>backend development</strong>, cloud platforms, application security, and DevSecOps — helping teams ship software that is secure by design, not bolted on after.
+      Software engineer, 10+ years building backends inside banks (Bankdata, Danske Bank) and other regulated environments. The work covers cloud platforms, application security, and DevSecOps. In practice, most of it is about getting security and compliance right at the architecture level, before the code gets written.
     </p>
     <p class="about-text" style="margin-top:12px;">
       Currently lead developer for cloud application enablement at Bankdata. Available for small, well-scoped consulting engagements: architecture reviews, security design, and DevOps guidance.
@@ -397,10 +397,10 @@
         </div>
         <div class="exp-role">Lead Software Developer · Cloud Application Enablement <span class="team-type">· Enabling / Platform team</span></div>
         <p class="exp-outcome">
-          Leading a <strong>team of three</strong> operating at the intersection of an <strong>enabling team and a platform team</strong> — building the shared foundations that allow stream-aligned teams to move safely and efficiently to the cloud. The core goal is <strong>reducing the operational and cognitive load on stream-aligned teams</strong> so they can focus on delivery rather than infrastructure. The work spans cloud and DevOps guidance, <strong>event-driven architectures using Kafka</strong>, CDC-based data integration, and a <strong>Kubernetes controller written in Go</strong> for automated database provisioning.
+          I lead a team of three that does both <strong>enabling and platform work</strong>: building the shared infrastructure stream-aligned teams use to move to the cloud, and absorbing the operational complexity so they can stay focused on their actual product. Day to day, that means cloud and DevOps guidance, event-driven systems on Kafka, CDC-based data integration, and a Kubernetes controller we wrote in Go to automate database provisioning.
         </p>
         <p class="exp-outcome">
-          A growing focus is on enabling <strong>cloud-based data platforms for stream-aligned teams</strong>: CDC pipelines, Kafka-based data distribution, PostgreSQL/Aurora services, and cloud read models — <strong>decoupling data access from centralised core banking databases</strong> and aligning data reconciliation patterns between cloud and on-premises systems. All of it designed to let teams own their data in the cloud without carrying the complexity of legacy integration.
+          More of our recent work is about giving stream-aligned teams their own cloud data platforms: CDC pipelines, Kafka-based distribution, PostgreSQL/Aurora services, and read models that decouple them from the centralised core banking databases. Reconciliation between cloud and on-prem is the part that bites if you get it wrong, so that's where most of the design effort goes.
         </p>
       </div>
 
@@ -411,13 +411,13 @@
         </div>
         <div class="exp-role">Lead Developer · Transactions &amp; Categorisation (Consultant) <span class="team-type">· Stream-aligned team</span></div>
         <p class="exp-outcome">
-          Designed and built Bankdata's <strong>first application handling real customer data on AWS</strong> — an <strong>event-driven transaction and categorisation engine</strong> processing 3.5 billion transactions for 1.4 million customers, with strict requirements for security, scalability, and integration with existing systems.
+          Designed and built Bankdata's <strong>first application to handle real customer data on AWS</strong>: an event-driven transaction and categorisation engine processing 3.5 billion transactions for 1.4 million customers. Security, scale, and integration with legacy systems all had to land at the same time.
         </p>
         <p class="exp-outcome">
-          As lead developer in a <strong>cross-functional team of eight</strong>, I led the application architecture and implemented the solution in Quarkus and Java. I built CI/CD pipelines and infrastructure-as-code using <strong>GitHub Actions and Terraform</strong>, and integrated AWS services including <strong>ECS Fargate, SQS/SNS, S3, and Aurora PostgreSQL</strong>. A key part of the work was handling secure ingestion and <strong>migration of data from on-premises systems</strong> to AWS, requiring careful coordination across security, compliance, and operational teams.
+          As lead developer on a team of eight, I owned the application architecture and built the solution in Quarkus and Java. CI/CD on GitHub Actions, infrastructure-as-code in Terraform, running on ECS Fargate with SQS/SNS, S3, and Aurora PostgreSQL. The slowest part of the work was the migration: pulling data from on-prem systems into AWS without breaking anything on the security, compliance, or operations side.
         </p>
         <p class="exp-outcome">
-          The project became a major milestone in Bankdata's <strong>cloud migration and modernisation journey</strong> — establishing reusable patterns for secure, compliant cloud delivery that subsequent teams could build on.
+          The patterns we settled on for secure cloud delivery have since been picked up by other Bankdata teams.
         </p>
       </div>
 
@@ -428,7 +428,7 @@
         </div>
         <div class="exp-role">Lead Developer · AppSec / Authorization (Consultant) <span class="team-type">· Platform team</span></div>
         <p class="exp-outcome">
-          Built a <strong>central policy-as-code authorization platform</strong> using OPA and Styra, onboarding 20+ development teams while building the tooling to scale across Bankdata's ~1000 developers. Led vendor engagement, matured the solution from PoC to production, and built tooling for self-service adoption. The work was as much about <strong>organisational change and stakeholder alignment</strong> as technical implementation — driving a fundamental shift in how Bankdata approached modern authorization with cloud-native tools. Grew the team from one to five developers and fostered a culture of independent learning and community participation.
+          Built a <strong>central policy-as-code authorization platform</strong> on OPA and Styra. We onboarded 20+ development teams and built the tooling needed to scale across Bankdata's ~1000 developers. I led the vendor engagement, took the platform from PoC to production, and built the self-service tooling. The technical implementation turned out to be the smaller part of the job; the harder work was the organisational change and getting stakeholders aligned on a cloud-native approach to authorization. Team grew from one to five during that time.
         </p>
       </div>
 
@@ -439,7 +439,7 @@
         </div>
         <div class="exp-role">Senior Software Engineer · API Integration Tribe</div>
         <p class="exp-outcome">
-          Developed <strong>AuthN/AuthZ patterns</strong> and a <strong>shared build and deploy pipeline</strong> across .NET Core and Spring Boot services on OpenShift. Led a technical PoC for <strong>CDC-based mainframe integration</strong>, designing the foundation of a modern <strong>event-driven data distribution layer</strong> on Kafka as an alternative to the existing message broker infrastructure.
+          Developed AuthN/AuthZ patterns and a shared build-and-deploy pipeline across .NET Core and Spring Boot services on OpenShift. Led a technical PoC for <strong>CDC-based mainframe integration</strong>: the foundation of an event-driven distribution layer on Kafka, intended as an alternative to the legacy message broker.
         </p>
       </div>
 
@@ -451,11 +451,11 @@
         <div class="exp-role">Senior Security Architect · Security Lab</div>
         <p class="exp-outcome">Wide-ranging security work across industry and public sector:</p>
         <ul class="exp-outcome">
-          <li><strong>CIDI</strong> — threat modelling, security assessments, and DevSecOps adoption for Danish companies building internet-connected products.</li>
-          <li><strong>Health Sector Consent App</strong> — designed and built an MVP for a privacy-first consent management service integrating with NemID.</li>
-          <li><strong>S-441 Standards</strong> — contributed to Danish Standards work shaping input to ISO 27000, IEC 62443, and ETSI EN 303 645.</li>
-          <li><strong>RIoTPot</strong> — co-designed IoT/OT honeypots with Aalborg University to study real-world attack vectors on connected devices.</li>
-          <li><strong>Digital identity review</strong> — white-box security assessment of a Danish digital identity solution (mobile app and backend).</li>
+          <li><strong>CIDI</strong>: threat modelling, security assessments, and DevSecOps adoption for Danish companies building internet-connected products.</li>
+          <li><strong>Health Sector Consent App</strong>: designed and built an MVP for a privacy-first consent management service integrating with NemID.</li>
+          <li><strong>S-441 Standards</strong>: contributed to Danish Standards work shaping input to ISO 27000, IEC 62443, and ETSI EN 303 645.</li>
+          <li><strong>RIoTPot</strong>: co-designed IoT/OT honeypots with Aalborg University to study real-world attack vectors on connected devices.</li>
+          <li><strong>Digital identity review</strong>: white-box security assessment of a Danish digital identity solution (mobile app and backend).</li>
         </ul>
       </div>
 
@@ -466,7 +466,7 @@
         </div>
         <div class="exp-role">Senior Software Engineer</div>
         <p class="exp-outcome">
-          Contributed to building a new <strong>EDI platform in C# on OpenShift</strong>, replacing legacy infrastructure. Led the secure customer onboarding flow — migrating from a proprietary encryption format to OpenPGP — working alongside two consultants.
+          Contributed to building a new EDI platform in C# on OpenShift, replacing legacy infrastructure. Led the secure customer onboarding flow, migrating from a proprietary encryption format to OpenPGP, with two consultants.
         </p>
       </div>
 
@@ -640,7 +640,7 @@
   <!-- CONTACT -->
   <section class="section" id="contact">
     <div class="section-label">Contact</div>
-    <p class="about-text" style="margin-bottom:20px;">Available for small, well-defined consulting engagements — architecture reviews, security design, and DevOps guidance.</p>
+    <p class="about-text" style="margin-bottom:20px;">Available for small, well-scoped consulting engagements: architecture reviews, security design, and DevOps guidance.</p>
     <div class="contact-links">
       <a class="contact-link" href="mailto:mail@simlau.dk">
         <span class="contact-link-label">Email</span>
