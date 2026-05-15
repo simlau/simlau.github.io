@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{{ page.title }}</title>
+  <meta name="description" content="{{ site.description }}"/>
+  <link rel="shortcut icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      display: flex;
+      min-height: 100vh;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      width: 240px;
+      min-width: 240px;
+      background: #080f1e;
+      border-right: 1px solid #1e293b;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 36px 24px;
+      overflow-y: auto;
+    }
+
+    .sidebar-name {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #f1f5f9;
+      line-height: 1.2;
+    }
+
+    .sidebar-title {
+      color: #38bdf8;
+      font-size: 9px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-top: 6px;
+      font-weight: 600;
+    }
+
+    .sidebar-location {
+      color: #475569;
+      font-size: 11px;
+      margin-top: 6px;
+    }
+
+    .sidebar-divider {
+      border: none;
+      border-top: 1px solid #1e293b;
+      margin: 24px 0;
+    }
+
+    .sidebar-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .sidebar-nav a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 6px 10px;
+      border-radius: 5px;
+      transition: all 0.15s;
+      letter-spacing: 0.3px;
+    }
+
+    .sidebar-nav a:hover { color: #38bdf8; background: #1e293b; }
+
+    .sidebar-footer {
+      margin-top: auto;
+      padding-top: 24px;
+      border-top: 1px solid #1e293b;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .sidebar-footer a {
+      color: #475569;
+      text-decoration: none;
+      font-size: 11px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .sidebar-footer a:hover { color: #94a3b8; }
+    .sidebar-footer .icon { width: 14px; height: 14px; opacity: 0.6; flex-shrink: 0; }
+
+    /* ── MAIN ── */
+    .main {
+      flex: 1;
+      padding: 52px 60px;
+      max-width: 780px;
+    }
+
+    /* ── SECTIONS ── */
+    .section { margin-bottom: 56px; }
+
+    .section-label {
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #38bdf8;
+      font-weight: 700;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #1e293b;
+    }
+
+    /* ── ABOUT ── */
+    .about-text { color: #94a3b8; font-size: 14px; line-height: 1.8; }
+    .about-text strong { color: #cbd5e1; font-weight: 600; }
+
+    .about-tags {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      background: #1e293b;
+      color: #7dd3fc;
+      font-size: 11px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+
+    .tag.dim { color: #64748b; background: #0f1f33; }
+
+    /* ── EXPERIENCE ── */
+    .exp-list { display: flex; flex-direction: column; }
+
+    .exp-item {
+      padding: 20px 0 20px 16px;
+      border-bottom: 1px solid #1e293b;
+      position: relative;
+    }
+
+    .exp-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 24px;
+      width: 3px;
+      height: calc(100% - 32px);
+      background: #1e293b;
+      border-radius: 2px;
+    }
+
+    .exp-item:hover::before { background: #38bdf8; }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+
+    .exp-company { font-size: 14px; font-weight: 700; color: #e2e8f0; }
+    .exp-dates { color: #475569; font-size: 11px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .exp-role { color: #38bdf8; font-size: 11px; font-weight: 500; letter-spacing: 0.5px; margin-bottom: 8px; }
+    .exp-role .team-type { color: #475569; font-weight: 400; }
+
+    .exp-outcome { color: #64748b; font-size: 13px; line-height: 1.7; }
+    .exp-outcome strong { color: #94a3b8; font-weight: 600; }
+    .exp-outcome em { color: #94a3b8; }
+    .exp-outcome + .exp-outcome { margin-top: 8px; }
+
+    .exp-outcome ul {
+      margin-top: 8px;
+      padding-left: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    /* ── SKILLS ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .skill-group {
+      background: #0d1a2d;
+      border: 1px solid #1e293b;
+      border-radius: 8px;
+      padding: 16px 18px;
+    }
+
+    .skill-group-label {
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #38bdf8;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+    .skill-tag {
+      background: #1e293b;
+      color: #94a3b8;
+      font-size: 11px;
+      padding: 3px 9px;
+      border-radius: 4px;
+    }
+
+    /* ── EDUCATION ── */
+    .edu-examiner { margin-top: 24px; }
+
+    .edu-examiner-label {
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #38bdf8;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .edu-examiner-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 8px;
+    }
+
+    .edu-examiner-title { color: #94a3b8; font-size: 13px; }
+    .edu-examiner-sub { color: #475569; font-size: 11px; }
+    .edu-examiner-dates { color: #475569; font-size: 11px; }
+
+    /* ── CONFERENCES ── */
+    .conf-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .conf-card {
+      background: #0d1a2d;
+      border: 1px solid #1e293b;
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+
+    .conf-name { color: #e2e8f0; font-size: 13px; font-weight: 600; }
+    .conf-years { color: #475569; font-size: 11px; margin-top: 4px; }
+
+    /* ── CONTACT ── */
+    .contact-links { display: flex; flex-direction: column; gap: 12px; }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #64748b;
+      font-size: 13px;
+      transition: color 0.15s;
+    }
+
+    .contact-link:hover { color: #38bdf8; }
+
+    .contact-link-label {
+      font-size: 9px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #334155;
+      font-weight: 600;
+      width: 60px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      body { flex-direction: column; }
+
+      .sidebar {
+        width: 100%;
+        min-width: 0;
+        height: auto;
+        position: static;
+        padding: 24px 20px;
+        border-right: none;
+        border-bottom: 1px solid #1e293b;
+      }
+
+      .sidebar-footer { margin-top: 20px; flex-direction: row; flex-wrap: wrap; gap: 16px; }
+      .sidebar-nav { flex-direction: row; flex-wrap: wrap; }
+      .main { padding: 32px 20px; max-width: 100%; }
+      .skills-grid, .conf-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div>
+    <div class="sidebar-name">Simon B.<br>Laursen</div>
+    <div class="sidebar-title">Lead Software Engineer</div>
+    <div class="sidebar-location">Greater Aarhus Area, Denmark</div>
+  </div>
+
+  <hr class="sidebar-divider"/>
+
+  <nav class="sidebar-nav">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#conferences">Conferences</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="sidebar-footer">
+    <a href="mailto:mail@simlau.dk">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+      mail@simlau.dk
+    </a>
+    <a href="https://github.com/simlau">
+      <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.483 0-.237-.009-.868-.014-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.417 22 12c0-5.523-4.477-10-10-10z"/></svg>
+      github.com/simlau
+    </a>
+    <a href="https://linkedin.com/in/simlau">
+      <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+      linkedin.com/in/simlau
+    </a>
+  </div>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="section-label">About</div>
+    <p class="about-text">
+      Software engineer with <strong>10+ years</strong> building reliable and secure systems in regulated environments. I work across <strong>backend development</strong>, cloud platforms, application security, and DevSecOps — helping teams ship software that is secure by design, not bolted on after.
+    </p>
+    <p class="about-text" style="margin-top:12px;">
+      Currently lead developer for cloud application enablement at Bankdata. Available for small, well-scoped consulting engagements: architecture reviews, security design, and DevOps guidance.
+    </p>
+    <p class="about-text" style="margin-top:12px;">
+      PhD in Computer Science (distributed systems &amp; formal verification). Accredited external examiner in Computer Science.
+    </p>
+    <div class="about-tags">
+      <span class="tag">Backend Engineering</span>
+      <span class="tag">System Design</span>
+      <span class="tag">Application Security</span>
+      <span class="tag">Security Architecture</span>
+      <span class="tag">DevOps / DevSecOps</span>
+      <span class="tag dim">Banking</span>
+      <span class="tag dim">Regulated environments</span>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience">
+    <div class="section-label">Experience</div>
+    <div class="exp-list">
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-company">Bankdata</span>
+          <span class="exp-dates">Aug 2025 – present</span>
+        </div>
+        <div class="exp-role">Lead Software Developer · Cloud Application Enablement <span class="team-type">· Enabling / Platform team</span></div>
+        <p class="exp-outcome">
+          Leading a <strong>team of three</strong> operating at the intersection of an <strong>enabling team and a platform team</strong> — building the shared foundations that allow stream-aligned teams to move safely and efficiently to the cloud. The core goal is <strong>reducing the operational and cognitive load on stream-aligned teams</strong> so they can focus on delivery rather than infrastructure. The work spans cloud and DevOps guidance, <strong>event-driven architectures using Kafka</strong>, CDC-based data integration, and a <strong>Kubernetes controller written in Go</strong> for automated database provisioning.
+        </p>
+        <p class="exp-outcome">
+          A growing focus is on enabling <strong>cloud-based data platforms for stream-aligned teams</strong>: CDC pipelines, Kafka-based data distribution, PostgreSQL/Aurora services, and cloud read models — <strong>decoupling data access from centralised core banking databases</strong> and aligning data reconciliation patterns between cloud and on-premises systems. All of it designed to let teams own their data in the cloud without carrying the complexity of legacy integration.
+        </p>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-company">Bankdata</span>
+          <span class="exp-dates">2023 – 2025</span>
+        </div>
+        <div class="exp-role">Lead Developer · Transactions &amp; Categorisation (Consultant) <span class="team-type">· Stream-aligned team</span></div>
+        <p class="exp-outcome">
+          Designed and built Bankdata's <strong>first application handling real customer data on AWS</strong> — an <strong>event-driven transaction and categorisation engine</strong> processing 3.5 billion transactions for 1.4 million customers, with strict requirements for security, scalability, and integration with existing systems.
+        </p>
+        <p class="exp-outcome">
+          As lead developer in a <strong>cross-functional team of eight</strong>, I led the application architecture and implemented the solution in Quarkus and Java. I built CI/CD pipelines and infrastructure-as-code using <strong>GitHub Actions and Terraform</strong>, and integrated AWS services including <strong>ECS Fargate, SQS/SNS, S3, and Aurora PostgreSQL</strong>. A key part of the work was handling secure ingestion and <strong>migration of data from on-premises systems</strong> to AWS, requiring careful coordination across security, compliance, and operational teams.
+        </p>
+        <p class="exp-outcome">
+          The project became a major milestone in Bankdata's <strong>cloud migration and modernisation journey</strong> — establishing reusable patterns for secure, compliant cloud delivery that subsequent teams could build on.
+        </p>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-company">Bankdata</span>
+          <span class="exp-dates">2021 – 2023</span>
+        </div>
+        <div class="exp-role">Lead Developer · AppSec / Authorization (Consultant) <span class="team-type">· Platform team</span></div>
+        <p class="exp-outcome">
+          Built a <strong>central policy-as-code authorization platform</strong> using OPA and Styra, onboarding 20+ development teams while building the tooling to scale across Bankdata's ~1000 developers. Led vendor engagement, matured the solution from PoC to production, and built tooling for self-service adoption. The work was as much about <strong>organisational change and stakeholder alignment</strong> as technical implementation — driving a fundamental shift in how Bankdata approached modern authorization with cloud-native tools. Grew the team from one to five developers and fostered a culture of independent learning and community participation.
+        </p>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-company">Danske Bank</span>
+          <span class="exp-dates">2020 – 2021</span>
+        </div>
+        <div class="exp-role">Senior Software Engineer · API Integration Tribe</div>
+        <p class="exp-outcome">
+          Developed <strong>AuthN/AuthZ patterns</strong> and a <strong>shared build and deploy pipeline</strong> across .NET Core and Spring Boot services on OpenShift. Led a technical PoC for <strong>CDC-based mainframe integration</strong>, designing the foundation of a modern <strong>event-driven data distribution layer</strong> on Kafka as an alternative to the existing message broker infrastructure.
+        </p>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-company">Alexandra Instituttet</span>
+          <span class="exp-dates">2019 – 2020</span>
+        </div>
+        <div class="exp-role">Senior Security Architect · Security Lab</div>
+        <p class="exp-outcome">Wide-ranging security work across industry and public sector:</p>
+        <ul class="exp-outcome">
+          <li><strong>CIDI</strong> — threat modelling, security assessments, and DevSecOps adoption for Danish companies building internet-connected products.</li>
+          <li><strong>Health Sector Consent App</strong> — designed and built an MVP for a privacy-first consent management service integrating with NemID.</li>
+          <li><strong>S-441 Standards</strong> — contributed to Danish Standards work shaping input to ISO 27000, IEC 62443, and ETSI EN 303 645.</li>
+          <li><strong>RIoTPot</strong> — co-designed IoT/OT honeypots with Aalborg University to study real-world attack vectors on connected devices.</li>
+          <li><strong>Digital identity review</strong> — white-box security assessment of a Danish digital identity solution (mobile app and backend).</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-company">Danske Bank</span>
+          <span class="exp-dates">2018 – 2019</span>
+        </div>
+        <div class="exp-role">Senior Software Engineer</div>
+        <p class="exp-outcome">
+          Contributed to building a new <strong>EDI platform in C# on OpenShift</strong>, replacing legacy infrastructure. Led the secure customer onboarding flow — migrating from a proprietary encryption format to OpenPGP — working alongside two consultants.
+        </p>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-company">Trackunit</span>
+          <span class="exp-dates">2017 – 2018</span>
+        </div>
+        <div class="exp-role">Software Engineer</div>
+        <p class="exp-outcome">
+          Designed and built APIs and microservices for <strong>real-time telemetry processing</strong> on AWS, using Flink, Kafka, and Cassandra.
+        </p>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-company">Cryptomathic</span>
+          <span class="exp-dates">2016 – 2017</span>
+        </div>
+        <div class="exp-role">Software Engineer</div>
+        <p class="exp-outcome">
+          HSM middleware and web services for <strong>eIDAS-compliant qualified electronic signatures</strong>.
+        </p>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-company">Aalborg University</span>
+          <span class="exp-dates">2012 – 2016</span>
+        </div>
+        <div class="exp-role">PhD Fellow · Computer Science</div>
+        <p class="exp-outcome">
+          Dissertation: <em>Synchronization and Control of Quantitative Systems</em>. Research in <strong>formal methods and verification of distributed systems</strong>, supervised by Prof. Kim G. Larsen and Prof. Jiri Srba.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section" id="skills">
+    <div class="section-label">Skills &amp; Technologies</div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="skill-group-label">Languages</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">C#</span>
+          <span class="skill-tag">Go</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">Bash</span>
+          <span class="skill-tag">Rego</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">Architecture &amp; Design</div>
+        <div class="skill-tags">
+          <span class="skill-tag">System Architecture</span>
+          <span class="skill-tag">Distributed Systems</span>
+          <span class="skill-tag">Event-Driven Architecture</span>
+          <span class="skill-tag">REST APIs</span>
+          <span class="skill-tag">Software Design</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">Security &amp; Identity</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Application Security</span>
+          <span class="skill-tag">Threat modelling</span>
+          <span class="skill-tag">OPA / Policy-as-code</span>
+          <span class="skill-tag">OIDC / OAuth</span>
+          <span class="skill-tag">Cryptography</span>
+          <span class="skill-tag">SAST / SCA</span>
+          <span class="skill-tag">OWASP SAMM / ASVS</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">Cloud &amp; Infrastructure</div>
+        <div class="skill-tags">
+          <span class="skill-tag">AWS</span>
+          <span class="skill-tag">Terraform</span>
+          <span class="skill-tag">Kubernetes</span>
+          <span class="skill-tag">OpenShift</span>
+          <span class="skill-tag">ArgoCD</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">Data &amp; Delivery</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Kafka</span>
+          <span class="skill-tag">CDC</span>
+          <span class="skill-tag">GitHub Actions</span>
+          <span class="skill-tag">Azure DevOps</span>
+          <span class="skill-tag">Jenkins</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">Practices</div>
+        <div class="skill-tags">
+          <span class="skill-tag">DevOps</span>
+          <span class="skill-tag">DevSecOps</span>
+          <span class="skill-tag">SDLC</span>
+          <span class="skill-tag">Static Analysis</span>
+          <span class="skill-tag">Security-by-design</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section" id="education">
+    <div class="section-label">Education</div>
+    <div class="exp-list">
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-company">Aalborg University</span>
+          <span class="exp-dates">2012 – 2016</span>
+        </div>
+        <div class="exp-role">PhD in Computer Science</div>
+        <p class="exp-outcome"><em>Synchronization and Control of Quantitative Systems</em> — formal methods and verification of distributed systems.</p>
+      </div>
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-company">Aalborg University</span>
+          <span class="exp-dates">2007 – 2012</span>
+        </div>
+        <div class="exp-role">MSc in Computer Science and Mathematics</div>
+      </div>
+    </div>
+
+    <div class="edu-examiner">
+      <div class="edu-examiner-label">External Examiner</div>
+      <div class="edu-examiner-row">
+        <span class="edu-examiner-title">Computer Science programmes <span class="edu-examiner-sub">(Censorkorpset i Datalogi)</span></span>
+        <span class="edu-examiner-dates">2018 – present</span>
+      </div>
+      <div class="edu-examiner-row">
+        <span class="edu-examiner-title">Electronics &amp; IT engineering <span class="edu-examiner-sub">(Civilingeniørcensorkorpset)</span></span>
+        <span class="edu-examiner-dates">2022 – 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONFERENCES -->
+  <section class="section" id="conferences">
+    <div class="section-label">Conferences</div>
+    <div class="conf-grid">
+      <div class="conf-card">
+        <div class="conf-name">KubeCon + CloudNativeCon Europe</div>
+        <div class="conf-years">2022 · 2023 · 2024 · 2025 · 2026</div>
+      </div>
+      <div class="conf-card">
+        <div class="conf-name">DEVOXX Belgium</div>
+        <div class="conf-years">2022 · 2023 · 2024</div>
+      </div>
+      <div class="conf-card">
+        <div class="conf-name">AWS Summit Stockholm</div>
+        <div class="conf-years">2024</div>
+      </div>
+      <div class="conf-card">
+        <div class="conf-name">KCD Danmark · Aarhus</div>
+        <div class="conf-years">2023</div>
+      </div>
+      <div class="conf-card">
+        <div class="conf-name">GOTO Copenhagen</div>
+        <div class="conf-years">Technical Leadership Masterclass · 2025</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="section-label">Contact</div>
+    <p class="about-text" style="margin-bottom:20px;">Available for small, well-defined consulting engagements — architecture reviews, security design, and DevOps guidance.</p>
+    <div class="contact-links">
+      <a class="contact-link" href="mailto:mail@simlau.dk">
+        <span class="contact-link-label">Email</span>
+        mail@simlau.dk
+      </a>
+      <a class="contact-link" href="https://linkedin.com/in/simlau">
+        <span class="contact-link-label">LinkedIn</span>
+        linkedin.com/in/simlau
+      </a>
+      <a class="contact-link" href="https://github.com/simlau">
+        <span class="contact-link-label">GitHub</span>
+        github.com/simlau
+      </a>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>
