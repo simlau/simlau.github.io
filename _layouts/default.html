@@ -328,7 +328,7 @@
 <aside class="sidebar">
   <div>
     <div class="sidebar-name">Simon B.<br>Laursen</div>
-    <div class="sidebar-title">Lead Software Engineer</div>
+    <div class="sidebar-title">Software Engineer &amp; Architect</div>
     <div class="sidebar-location">Greater Aarhus Area, Denmark</div>
   </div>
 
@@ -366,7 +366,7 @@
   <section class="section" id="about">
     <div class="section-label">About</div>
     <p class="about-text">
-      Lead software engineer and architect, 10+ years on backend systems, cloud-native platforms, and security-by-design inside regulated financial environments. In practice, most of the work is getting security and compliance right at the architecture level, before the code gets written.
+      Software engineer and architect, 10+ years on backend systems, cloud-native platforms, and security-by-design inside regulated financial environments. In practice, most of the work is getting security and compliance right at the architecture level, before the code gets written.
     </p>
     <p class="about-text" style="margin-top:12px;">
       I'm currently consulting for DSV, modernising legacy .NET services into Java microservices on Kubernetes. Before that, I spent five years at Bankdata, most recently as lead developer for cloud application enablement.
@@ -378,7 +378,8 @@
       PhD in Computer Science (distributed systems &amp; formal verification). Accredited external examiner in Computer Science.
     </p>
     <div class="about-tags">
-      <span class="tag">Backend Engineering</span>
+      <span class="tag">Java Backend Engineering</span>
+      <span class="tag">Legacy Modernisation</span>
       <span class="tag">System Design</span>
       <span class="tag">Application Security</span>
       <span class="tag">Security Architecture</span>
@@ -419,7 +420,10 @@
           I led a three-person <strong>enabling and platform</strong> team supporting 5+ stream-aligned teams, building the shared infrastructure they used to move to the cloud and absorbing the operational complexity so they could stay focused on their product. In practice, that meant CDC pipelines off the core banking systems, Kafka-based distribution, PostgreSQL/Aurora services, and read models that decouple them from the centralised on-prem databases. Where the previous role built Bankdata's first AWS application, this one scaled the same approach across the company.
         </p>
         <p class="exp-outcome">
-          The hard part wasn't the technology. It was moving an organisation that has relied on synchronous calls for 40 years to an architecture that is eventually consistent by design. Reconciliation between cloud and on-prem is where that bites if you get it wrong, so that's where most of the design effort went. We also wrote a Kubernetes controller in Go to automate database provisioning, and I embraced agentic programming in day-to-day development.
+          The hard part wasn't the technology. It was moving an organisation that has relied on synchronous calls for 40 years to an architecture that is eventually consistent by design. Reconciliation between cloud and on-prem is where that bites if you get it wrong, so that's where most of the design effort went. We settled on a small set of patterns teams could rely on: CQRS-style read models, idempotent consumers with the outbox pattern, versioned event contracts, and automated reconciliation against DB2 as the source of truth.
+        </p>
+        <p class="exp-outcome">
+          To make it self-service, we wrote a Kubernetes controller in Go that provisions databases on demand, backed by golden-path templates and shared monitoring for the data pipelines. I also embraced agentic programming in day-to-day development.
         </p>
       </div>
 
@@ -428,15 +432,15 @@
           <span class="exp-company">Bankdata</span>
           <span class="exp-dates">2023 – 2025</span>
         </div>
-        <div class="exp-role">Lead Developer · Transactions &amp; Categorisation (Consultant) <span class="team-type">· Stream-aligned team</span></div>
+        <div class="exp-role">External Consultant · Transactions &amp; Categorisation <span class="team-type">· Stream-aligned team</span></div>
         <p class="exp-outcome">
-          Designed and built <strong>Bankdata's first production use of public cloud for customer data</strong>: an event-driven transaction and categorisation engine on AWS, processing 3.5 billion transactions for 1.4 million customers. Security, scale, and integration with legacy systems all had to land at the same time.
+          Designed and built <strong>Bankdata's first production use of public cloud for customer data</strong>: an event-driven transaction and categorisation engine on AWS that replaced an existing COTS solution, processing 3.5 billion transactions for 1.4 million customers. Security, scale, and integration with legacy systems all had to land at the same time.
         </p>
         <p class="exp-outcome">
           As lead developer on a team of eight, I owned the application architecture and built the solution in Quarkus and Java. CI/CD on GitHub Actions, infrastructure-as-code in Terraform, running on ECS Fargate with SQS/SNS, S3, and Aurora PostgreSQL. The slowest part of the work was the migration: pulling data from on-prem systems into AWS without breaking anything on the security, compliance, or operations side.
         </p>
         <p class="exp-outcome">
-          The patterns we settled on for secure cloud delivery have since been picked up by other Bankdata teams.
+          It's in production today, powering categorised transactions in the member banks' net and mobile banking. The patterns we settled on for secure cloud delivery have since been picked up by other Bankdata teams and became the starting point for the enablement work that followed.
         </p>
       </div>
 
@@ -445,9 +449,9 @@
           <span class="exp-company">Bankdata</span>
           <span class="exp-dates">2021 – 2023</span>
         </div>
-        <div class="exp-role">Lead Developer · AppSec / Authorization (Consultant) <span class="team-type">· Platform team</span></div>
+        <div class="exp-role">External Consultant · AppSec / Authorization <span class="team-type">· Platform team</span></div>
         <p class="exp-outcome">
-          Built a <strong>central policy-as-code authorization platform</strong> on OPA and Styra. Together with the Authorization manager, I ran the vendor engagement and the scalable PoC, helped mature the platform from alpha to production, and built the self-service tooling needed to scale it. Adoption grew from 2–5 teams to 20–30 by the time I left, and today all of Bankdata's roughly 1,000 developers use it. The technical implementation turned out to be the smaller part of the job; the harder work was the organisational change and getting stakeholders aligned on a cloud-native approach to authorization. Team grew from one to five during that time.
+          Built a <strong>central policy-as-code authorization platform</strong> on OPA and Styra. As lead developer, and together with the Authorization manager, I ran the vendor engagement and the scalable PoC, helped mature the platform from alpha to production, and built the self-service tooling needed to scale it. Policies were enforced in the API gateway and by OPA sidecars that services called through an internal SDK, with Rego policies tested and released through their own pipeline, wired into existing change management. Adoption grew from 2–5 teams to 20–30 by the time I left, and today all of Bankdata's roughly 1,000 developers use it. The technical implementation turned out to be the smaller part of the job; the harder work was the organisational change and getting stakeholders aligned on a cloud-native approach to authorization. Team grew from one to five during that time.
         </p>
       </div>
 
@@ -534,6 +538,7 @@
         <div class="skill-tags">
           <span class="skill-tag">Java</span>
           <span class="skill-tag">Quarkus</span>
+          <span class="skill-tag">Spring Boot</span>
           <span class="skill-tag">C#</span>
           <span class="skill-tag">Go</span>
           <span class="skill-tag">SQL</span>
@@ -547,6 +552,7 @@
           <span class="skill-tag">System Architecture</span>
           <span class="skill-tag">Distributed Systems</span>
           <span class="skill-tag">Event-Driven Architecture</span>
+          <span class="skill-tag">Legacy Modernisation</span>
           <span class="skill-tag">REST APIs</span>
           <span class="skill-tag">Software Design</span>
         </div>
@@ -572,6 +578,7 @@
           <span class="skill-tag">Terraform / OpenTofu</span>
           <span class="skill-tag">Kubernetes</span>
           <span class="skill-tag">ROSA / OpenShift</span>
+          <span class="skill-tag">Azure / AKS</span>
           <span class="skill-tag">Aurora / PostgreSQL</span>
           <span class="skill-tag">ArgoCD</span>
         </div>
@@ -581,6 +588,8 @@
         <div class="skill-tags">
           <span class="skill-tag">Kafka / MSK</span>
           <span class="skill-tag">CDC</span>
+          <span class="skill-tag">IBM MQ</span>
+          <span class="skill-tag">MongoDB</span>
           <span class="skill-tag">GitHub Actions</span>
           <span class="skill-tag">Azure DevOps</span>
           <span class="skill-tag">Jenkins</span>
