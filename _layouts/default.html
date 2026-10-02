@@ -43,6 +43,20 @@
       overflow-y: auto;
     }
 
+    .sidebar-header {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .sidebar-photo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 2px solid #1e293b;
+      object-fit: cover;
+    }
+
     .sidebar-name {
       font-size: 18px;
       font-weight: 800;
@@ -334,6 +348,8 @@
         border-bottom: 1px solid #1e293b;
       }
 
+      .sidebar-header { flex-direction: row; align-items: center; gap: 16px; }
+      .sidebar-photo { width: 80px; height: 80px; }
       .sidebar-footer { margin-top: 20px; flex-direction: row; flex-wrap: wrap; gap: 16px; }
       .sidebar-nav { flex-direction: row; flex-wrap: wrap; }
       .main { padding: 32px 20px; max-width: 100%; }
@@ -345,10 +361,13 @@
 
 <!-- SIDEBAR -->
 <aside class="sidebar">
-  <div>
+  <div class="sidebar-header">
+    <img class="sidebar-photo" src="{{ '/me.jpg' | relative_url }}" alt="Simon B. Laursen" width="140" height="140"/>
+    <div>
     <div class="sidebar-name">Simon B.<br>Laursen</div>
     <div class="sidebar-title">Software Engineer &amp; Architect</div>
     <div class="sidebar-location">Greater Aarhus Area, Denmark</div>
+    </div>
   </div>
 
   <hr class="sidebar-divider"/>
