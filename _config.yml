@@ -1,7 +1,19 @@
 title: Simon B. Laursen
 description: "Hands-on software engineer and architect: Java backend, cloud-native platforms, and security in regulated environments. Open to full-time engagements from January 2027."
+url: https://simlau.dk
 
 markdown: kramdown
 
 plugins:
   - jekyll-sitemap
+
+exclude:
+  - CLAUDE.md
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - docs/
+  - cv/
+  - normal-cv/
+  - "*.pdf"
