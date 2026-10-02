@@ -3,8 +3,17 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>{{ page.title }}</title>
+  <title>{{ page.title }} · Software Engineer &amp; Architect</title>
   <meta name="description" content="{{ site.description }}"/>
+  <link rel="canonical" href="https://simlau.dk/"/>
+  <meta property="og:type" content="profile"/>
+  <meta property="og:url" content="https://simlau.dk/"/>
+  <meta property="og:title" content="{{ page.title }} · Software Engineer &amp; Architect"/>
+  <meta property="og:description" content="{{ site.description }}"/>
+  <meta property="og:image" content="https://simlau.dk/og-image.png"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="twitter:card" content="summary_large_image"/>
   <link rel="shortcut icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -44,16 +53,16 @@
 
     .sidebar-title {
       color: #38bdf8;
-      font-size: 9px;
-      letter-spacing: 2.5px;
+      font-size: 11px;
+      letter-spacing: 2px;
       text-transform: uppercase;
       margin-top: 6px;
       font-weight: 600;
     }
 
     .sidebar-location {
-      color: #475569;
-      font-size: 11px;
+      color: #8494a9;
+      font-size: 12px;
       margin-top: 6px;
     }
 
@@ -92,15 +101,15 @@
     }
 
     .sidebar-footer a {
-      color: #475569;
+      color: #8494a9;
       text-decoration: none;
-      font-size: 11px;
+      font-size: 12px;
       display: flex;
       align-items: center;
       gap: 7px;
     }
 
-    .sidebar-footer a:hover { color: #94a3b8; }
+    .sidebar-footer a:hover { color: #cbd5e1; }
     .sidebar-footer .icon { width: 14px; height: 14px; opacity: 0.6; flex-shrink: 0; }
 
     /* ── MAIN ── */
@@ -114,8 +123,8 @@
     .section { margin-bottom: 56px; }
 
     .section-label {
-      font-size: 9px;
-      letter-spacing: 3px;
+      font-size: 11px;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
       color: #38bdf8;
       font-weight: 700;
@@ -143,6 +152,33 @@
       gap: 8px;
     }
 
+    .availability {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 40px;
+      padding: 14px 18px;
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      border-radius: 8px;
+      color: #e2e8f0;
+      font-size: 14px;
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+
+    .availability:hover { border-color: #38bdf8; }
+    .availability strong { color: #38bdf8; font-weight: 600; }
+
+    .availability-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.2);
+      flex-shrink: 0;
+    }
+
     .tag {
       background: #1e293b;
       color: #7dd3fc;
@@ -153,7 +189,7 @@
       letter-spacing: 0.3px;
     }
 
-    .tag.dim { color: #64748b; background: #0f1f33; }
+    .tag.dim { color: #8494a9; background: #0f1f33; }
 
     /* ── EXPERIENCE ── */
     .exp-list { display: flex; flex-direction: column; }
@@ -187,18 +223,18 @@
     }
 
     .exp-company { font-size: 14px; font-weight: 700; color: #e2e8f0; }
-    .exp-dates { color: #475569; font-size: 11px; white-space: nowrap; font-variant-numeric: tabular-nums; }
-    .exp-role { color: #38bdf8; font-size: 11px; font-weight: 500; letter-spacing: 0.5px; margin-bottom: 8px; }
-    .exp-role .team-type { color: #475569; font-weight: 400; }
+    .exp-dates { color: #8494a9; font-size: 12px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .exp-role { color: #38bdf8; font-size: 12px; font-weight: 500; letter-spacing: 0.5px; margin-bottom: 8px; }
+    .exp-role .team-type { color: #8494a9; font-weight: 400; }
 
-    .exp-outcome { color: #64748b; font-size: 13px; line-height: 1.7; }
-    .exp-outcome strong { color: #94a3b8; font-weight: 600; }
-    .exp-outcome em { color: #94a3b8; }
+    .exp-outcome { color: #94a3b8; font-size: 13px; line-height: 1.7; }
+    .exp-outcome strong { color: #cbd5e1; font-weight: 600; }
+    .exp-outcome em { color: #cbd5e1; }
     .exp-outcome + .exp-outcome { margin-top: 8px; }
 
-    .exp-outcome ul {
+    ul.exp-outcome {
       margin-top: 8px;
-      padding-left: 16px;
+      padding-left: 20px;
       display: flex;
       flex-direction: column;
       gap: 6px;
@@ -219,7 +255,7 @@
     }
 
     .skill-group-label {
-      font-size: 9px;
+      font-size: 11px;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: #38bdf8;
@@ -241,7 +277,7 @@
     .edu-examiner { margin-top: 24px; }
 
     .edu-examiner-label {
-      font-size: 9px;
+      font-size: 11px;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: #38bdf8;
@@ -257,25 +293,8 @@
     }
 
     .edu-examiner-title { color: #94a3b8; font-size: 13px; }
-    .edu-examiner-sub { color: #475569; font-size: 11px; }
-    .edu-examiner-dates { color: #475569; font-size: 11px; }
-
-    /* ── CONFERENCES ── */
-    .conf-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    .conf-card {
-      background: #0d1a2d;
-      border: 1px solid #1e293b;
-      border-radius: 8px;
-      padding: 14px 16px;
-    }
-
-    .conf-name { color: #e2e8f0; font-size: 13px; font-weight: 600; }
-    .conf-years { color: #475569; font-size: 11px; margin-top: 4px; }
+    .edu-examiner-sub { color: #8494a9; font-size: 12px; }
+    .edu-examiner-dates { color: #8494a9; font-size: 12px; }
 
     /* ── CONTACT ── */
     .contact-links { display: flex; flex-direction: column; gap: 12px; }
@@ -285,7 +304,7 @@
       align-items: center;
       gap: 12px;
       text-decoration: none;
-      color: #64748b;
+      color: #94a3b8;
       font-size: 13px;
       transition: color 0.15s;
     }
@@ -293,12 +312,12 @@
     .contact-link:hover { color: #38bdf8; }
 
     .contact-link-label {
-      font-size: 9px;
+      font-size: 11px;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: #334155;
+      color: #8494a9;
       font-weight: 600;
-      width: 60px;
+      width: 76px;
     }
 
     /* ── RESPONSIVE ── */
@@ -318,7 +337,7 @@
       .sidebar-footer { margin-top: 20px; flex-direction: row; flex-wrap: wrap; gap: 16px; }
       .sidebar-nav { flex-direction: row; flex-wrap: wrap; }
       .main { padding: 32px 20px; max-width: 100%; }
-      .skills-grid, .conf-grid { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -339,7 +358,6 @@
     <a href="#experience">Experience</a>
     <a href="#skills">Skills</a>
     <a href="#education">Education</a>
-    <a href="#conferences">Conferences</a>
     <a href="#contact">Contact</a>
   </nav>
 
@@ -362,17 +380,26 @@
 <!-- MAIN -->
 <main class="main">
 
+  <!-- AVAILABILITY -->
+  <a class="availability" href="#contact">
+    <span class="availability-dot"></span>
+    <span><strong>Open to new full-time engagements</strong> from January 2027</span>
+  </a>
+
   <!-- ABOUT -->
   <section class="section" id="about">
     <div class="section-label">About</div>
     <p class="about-text">
-      Software engineer and architect, 10+ years on backend systems, cloud-native platforms, and security-by-design inside regulated financial environments. In practice, most of the work is getting security and compliance right at the architecture level, before the code gets written.
+      Software engineer and architect, 10+ years on backend systems, cloud-native platforms, and security-by-design inside regulated financial environments. I'm hands-on the whole way through: from getting the architecture and security right to building and shipping the systems myself. I take on complex problems and turn them into solid, scalable, and secure solutions.
     </p>
     <p class="about-text" style="margin-top:12px;">
       I'm currently consulting for DSV, modernising legacy .NET services into Java microservices on Kubernetes. Before that, I spent five years at Bankdata, most recently as lead developer for cloud application enablement.
     </p>
     <p class="about-text" style="margin-top:12px;">
-      The work I enjoy most is where security is part of the product, not an afterthought: authorization, identity, and secure platforms, like the policy-as-code authorization platform I built at Bankdata. Ideally in regulated environments where security is mandatory and designed in from the start, rather than patched on afterwards. I'm also open to selected, clearly scoped engagements: architecture reviews, security design, and platform engineering.
+      The work I enjoy most is where security is part of the product, not an afterthought: authorization, identity, and secure platforms, like the policy-as-code authorization platform I built at Bankdata. Ideally in regulated environments where security is mandatory and designed in from the start, rather than patched on afterwards.
+    </p>
+    <p class="about-text" style="margin-top:12px;">
+      In longer engagements, I work as a senior engineer or lead, building up teams and strengthening their competences along the way. Shorter engagements, such as architecture and security design reviews, are always welcome too.
     </p>
     <p class="about-text" style="margin-top:12px;">
       PhD in Computer Science (distributed systems &amp; formal verification). Accredited external examiner in Computer Science.
@@ -423,7 +450,7 @@
           The hard part wasn't the technology. It was moving an organisation that has relied on synchronous calls for 40 years to an architecture that is eventually consistent by design. Reconciliation between cloud and on-prem is where that bites if you get it wrong, so that's where most of the design effort went. We settled on a small set of patterns teams could rely on: CQRS-style read models, idempotent consumers with the outbox pattern, versioned event contracts, and automated reconciliation against DB2 as the source of truth.
         </p>
         <p class="exp-outcome">
-          To make it self-service, we wrote a Kubernetes controller in Go that provisions databases on demand, backed by golden-path templates and shared monitoring for the data pipelines. I also embraced agentic programming in day-to-day development.
+          To make it self-service, we wrote a Kubernetes controller in Go that provisions databases on demand, backed by golden-path templates and shared monitoring for the data pipelines. Agentic programming became a core part of my day-to-day development.
         </p>
       </div>
 
@@ -451,7 +478,13 @@
         </div>
         <div class="exp-role">External Consultant · AppSec / Authorization <span class="team-type">· Platform team</span></div>
         <p class="exp-outcome">
-          Built a <strong>central policy-as-code authorization platform</strong> on OPA and Styra. As lead developer, and together with the Authorization manager, I ran the vendor engagement and the scalable PoC, helped mature the platform from alpha to production, and built the self-service tooling needed to scale it. Policies were enforced in the API gateway and by OPA sidecars that services called through an internal SDK, with Rego policies tested and released through their own pipeline, wired into existing change management. Adoption grew from 2–5 teams to 20–30 by the time I left, and today all of Bankdata's roughly 1,000 developers use it. The technical implementation turned out to be the smaller part of the job; the harder work was the organisational change and getting stakeholders aligned on a cloud-native approach to authorization. Team grew from one to five during that time.
+          Built a <strong>central policy-as-code authorization platform</strong> on OPA and Styra. As lead developer, and together with the Authorization manager, I ran the vendor engagement and the scalable PoC, helped mature the platform from alpha to production, and built the self-service tooling needed to scale it. The team grew from one to five people along the way.
+        </p>
+        <p class="exp-outcome">
+          Policies were enforced in the API gateway and by OPA sidecars that services called through an internal SDK, with Rego policies tested and released through their own pipeline, wired into existing change management.
+        </p>
+        <p class="exp-outcome">
+          Adoption grew from 2–5 teams to 20–30 by the time I left, and today all of Bankdata's roughly 1,000 developers use it. The technical implementation turned out to be the smaller part of the job; the harder work was the organisational change and getting stakeholders aligned on a cloud-native approach to authorization.
         </p>
       </div>
 
@@ -489,7 +522,7 @@
         </div>
         <div class="exp-role">Senior Software Engineer</div>
         <p class="exp-outcome">
-          Contributed to building a new EDI platform in C# on OpenShift, replacing legacy infrastructure. Led the secure customer onboarding flow, migrating from a proprietary encryption format to OpenPGP, with two consultants.
+          Contributed to building a new EDI platform in C# on OpenShift, replacing legacy infrastructure. Responsible for the OpenPGP implementation in the secure customer onboarding flow, replacing a proprietary encryption format, on a team with two external consultants.
         </p>
       </div>
 
@@ -515,17 +548,6 @@
         </p>
       </div>
 
-      <div class="exp-item">
-        <div class="exp-header">
-          <span class="exp-company">Aalborg University</span>
-          <span class="exp-dates">2012 – 2016</span>
-        </div>
-        <div class="exp-role">PhD Fellow · Computer Science</div>
-        <p class="exp-outcome">
-          Dissertation: <em>Synchronization and Control of Quantitative Systems</em>. Research in <strong>formal methods and verification of distributed systems</strong>, supervised by Prof. Kim G. Larsen and Prof. Jiri Srba.
-        </p>
-      </div>
-
     </div>
   </section>
 
@@ -534,7 +556,7 @@
     <div class="section-label">Skills &amp; Technologies</div>
     <div class="skills-grid">
       <div class="skill-group">
-        <div class="skill-group-label">Languages</div>
+        <div class="skill-group-label">Languages &amp; Frameworks</div>
         <div class="skill-tags">
           <span class="skill-tag">Java</span>
           <span class="skill-tag">Quarkus</span>
@@ -601,8 +623,8 @@
           <span class="skill-tag">DevOps</span>
           <span class="skill-tag">DevSecOps</span>
           <span class="skill-tag">SDLC</span>
-          <span class="skill-tag">Static Analysis</span>
           <span class="skill-tag">Security-by-design</span>
+          <span class="skill-tag">AI-assisted development</span>
         </div>
       </div>
     </div>
@@ -642,37 +664,10 @@
     </div>
   </section>
 
-  <!-- CONFERENCES -->
-  <section class="section" id="conferences">
-    <div class="section-label">Conferences</div>
-    <div class="conf-grid">
-      <div class="conf-card">
-        <div class="conf-name">KubeCon + CloudNativeCon Europe</div>
-        <div class="conf-years">2022 · 2023 · 2024 · 2025 · 2026</div>
-      </div>
-      <div class="conf-card">
-        <div class="conf-name">DEVOXX Belgium</div>
-        <div class="conf-years">2022 · 2023 · 2024</div>
-      </div>
-      <div class="conf-card">
-        <div class="conf-name">AWS Summit Stockholm</div>
-        <div class="conf-years">2024</div>
-      </div>
-      <div class="conf-card">
-        <div class="conf-name">KCD Danmark · Aarhus</div>
-        <div class="conf-years">2023</div>
-      </div>
-      <div class="conf-card">
-        <div class="conf-name">GOTO Copenhagen</div>
-        <div class="conf-years">Technical Leadership Masterclass · 2025</div>
-      </div>
-    </div>
-  </section>
-
   <!-- CONTACT -->
   <section class="section" id="contact">
     <div class="section-label">Contact</div>
-    <p class="about-text" style="margin-bottom:20px;">Available for selected, clearly scoped consulting engagements: architecture reviews, security design, and platform engineering for regulated environments.</p>
+    <p class="about-text" style="margin-bottom:20px;">Available for full-time engagements from January 2027, and for shorter architecture and security design reviews at any time. Reach me by email or on LinkedIn.</p>
     <div class="contact-links">
       <a class="contact-link" href="mailto:mail@simlau.dk">
         <span class="contact-link-label">Email</span>
