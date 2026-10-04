@@ -1,4 +1,4 @@
 ---
 layout: default
-title: Simon B. Laursen
+title: Simon Borgbjerg Laursen
 ---
