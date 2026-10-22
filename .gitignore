@@ -6,4 +6,5 @@ _site/
 cv/
 normal-cv/
 *.pdf
+!Simon-B-Laursen-CV.pdf
 docs/

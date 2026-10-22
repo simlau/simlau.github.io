@@ -1,11 +1,13 @@
 title: Simon Borgbjerg Laursen
-description: "Independent senior software engineer and architect specialising in Java, Spring Boot, distributed systems, cloud platforms and application security."
 url: https://simlau.dk
 
 markdown: kramdown
 
 plugins:
   - jekyll-sitemap
+
+include:
+  - Simon-B-Laursen-CV.pdf
 
 exclude:
   - CLAUDE.md
