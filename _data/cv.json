@@ -1,0 +1,747 @@
+{
+  "da": {
+    "lang": "da",
+    "url": "https://simlau.dk/da/",
+    "alternates": [
+      {
+        "lang": "en",
+        "url": "https://simlau.dk/"
+      },
+      {
+        "lang": "da",
+        "url": "https://simlau.dk/da/"
+      },
+      {
+        "lang": "x-default",
+        "url": "https://simlau.dk/"
+      }
+    ],
+    "name": "Simon Borgbjerg Laursen",
+    "title": "Freelance Java-udvikler & softwarearkitekt",
+    "headline": "Freelance Java-udvikler & softwarearkitekt | Spring Boot, Quarkus, Kafka, Kubernetes, AWS | Legacy-modernisering & applikationssikkerhed | Aarhus",
+    "location": "Aarhus",
+    "availability": "Ledig til freelanceopgaver fra januar 2027 · Aarhus, Midtjylland og remote",
+    "description": "Freelance Java-udvikler og softwarearkitekt i Aarhus: Java, Spring Boot, Quarkus, Kafka, Kubernetes, AWS. Legacy-modernisering og applikationssikkerhed.",
+    "about": [
+      "Freelance Java-udvikler og softwarearkitekt i Aarhus med 10 års erfaring med backend og platforme i bank og andre regulerede miljøer. Jeg moderniserer legacy-systemer til eventdrevne Java-services på Kubernetes, AWS og Azure og bygger sikkerheden ind fra starten: autorisation, OAuth2/OIDC og policy-as-code.",
+      "Fem år hos Bankdata, senest som lead developer. Ph.d. i distribuerede systemer."
+    ],
+    "keywords": [
+      "Java",
+      "Spring Boot",
+      "Quarkus",
+      "Kafka",
+      "Kubernetes",
+      "AWS",
+      "Legacy-modernisering",
+      "Eventdrevet arkitektur",
+      "Platform engineering",
+      "Applikationssikkerhed",
+      "Bank og finans"
+    ],
+    "labels": {
+      "about": "Om mig",
+      "experience": "Erfaring",
+      "earlier": "Tidligere",
+      "skills": "Kompetencer",
+      "education": "Uddannelse",
+      "examiner": "Censor",
+      "contact": "Kontakt",
+      "contact_text": "Ledig til freelanceopgaver og altid til kortere arkitektur- og sikkerhedsreviews. Skriv til mig på mail eller LinkedIn.",
+      "present": "nu",
+      "full_cv": "Hent fuldt CV (PDF)",
+      "freelance": "Freelance",
+      "employee": "Fuldtid",
+      "months": [
+        "jan.",
+        "feb.",
+        "mar.",
+        "apr.",
+        "maj",
+        "jun.",
+        "jul.",
+        "aug.",
+        "sep.",
+        "okt.",
+        "nov.",
+        "dec."
+      ],
+      "months_long": [
+        "januar",
+        "februar",
+        "marts",
+        "april",
+        "maj",
+        "juni",
+        "juli",
+        "august",
+        "september",
+        "oktober",
+        "november",
+        "december"
+      ],
+      "groups": {
+        "ai": "AI-assisteret udvikling",
+        "data": "Data og integration",
+        "delivery": "Levering",
+        "languages": "Sprog og frameworks",
+        "platforms": "Platform og cloud",
+        "security": "Sikkerhed"
+      }
+    },
+    "contact": {
+      "email": "mail@simlau.dk",
+      "phone": "",
+      "website": "simlau.dk",
+      "linkedin": "linkedin.com/in/simlau",
+      "github": "github.com/simlau"
+    },
+    "pdf": "/Simon-B-Laursen-CV.pdf",
+    "experience": [
+      {
+        "company": "DSV",
+        "title": "Senior Java Developer (ekstern konsulent)",
+        "dates": "aug. 2026 – nu",
+        "years": "2026 – nu",
+        "location": "Remote",
+        "text": "Flytter forretningslogik fra legacy .NET-integrationer til Java 25/Spring Boot-microservices på AKS og afgør for hver service, om den skal migreres, erstattes eller nedlægges.",
+        "employment": "Freelance",
+        "tech": [
+          "Java",
+          "Spring Boot",
+          "Kafka",
+          "MongoDB",
+          "AKS",
+          "OAuth2/OIDC"
+        ]
+      },
+      {
+        "company": "Bankdata",
+        "title": "Lead Software Developer",
+        "dates": "aug. 2025 – aug. 2026",
+        "years": "2025 – 2026",
+        "location": "Aarhus",
+        "text": "Ledede enabling-teamet bag en CDC- og Kafka-baseret platform, der afkobler applikationsteams fra DB2 og mainframe og flytter dem fra synkrone kald til eventual consistency.",
+        "employment": "Fuldtid",
+        "tech": [
+          "Java",
+          "Go",
+          "Kafka",
+          "CDC",
+          "PostgreSQL/Aurora",
+          "Kubernetes",
+          "AWS (ECS Fargate, S3)"
+        ]
+      },
+      {
+        "company": "Bankdata",
+        "title": "Lead developer (ekstern konsulent)",
+        "dates": "aug. 2023 – jul. 2025",
+        "years": "2023 – 2025",
+        "location": "Aarhus",
+        "text": "Lead developer på Bankdatas første kundedataplatform i AWS: en Java/Quarkus-transaktionsmotor, der behandler 3,5 mia. transaktioner for 1,4 mio. kunder.",
+        "employment": "Freelance",
+        "tech": [
+          "Java",
+          "Quarkus",
+          "AWS (ECS Fargate, S3)",
+          "IBM MQ",
+          "SQS/SNS",
+          "Terraform/OpenTofu"
+        ]
+      },
+      {
+        "company": "Bankdata",
+        "title": "Ekstern konsulent",
+        "dates": "jun. 2021 – jul. 2023",
+        "years": "2021 – 2023",
+        "location": "Silkeborg",
+        "text": "Var med til at tage Bankdatas policy-as-code-autorisationsplatform på Open Policy Agent fra proof of concept til produktion. I dag bruger alle teams i Bankdata den.",
+        "employment": "Freelance",
+        "tech": [
+          "OPA/Styra",
+          "Rego",
+          "OAuth2/OIDC",
+          "Kubernetes",
+          "Java"
+        ]
+      }
+    ],
+    "earlier": [
+      {
+        "company": "Danske Bank",
+        "title": "Senior Software Engineer",
+        "dates": "okt. 2020 – maj 2021",
+        "years": "2020 – 2021",
+        "location": "Brabrand",
+        "text": "Ledede proof of concept-arbejdet med CDC fra DB2 til Kafka og var med til at designe Spring Boot-services og blueprints til at flytte mainframe-applikationer til OpenShift med indbygget AuthN/AuthZ.",
+        "employment": "Fuldtid",
+        "tech": [
+          "Java",
+          "Spring Boot",
+          "C#/.NET",
+          "Kafka",
+          "CDC",
+          "DB2"
+        ]
+      },
+      {
+        "company": "Alexandra Instituttet",
+        "title": "Senior Security Architect",
+        "dates": "okt. 2019 – sep. 2020",
+        "years": "2019 – 2020",
+        "location": "Aarhus",
+        "text": "Sikkerhedsarkitektur, trusselsmodellering og DevSecOps for forbundne produkter og backend-services samt dansk standardiseringsarbejde inden for IoT- og OT-sikkerhed.",
+        "employment": "Fuldtid",
+        "tech": [
+          "trusselsmodellering",
+          "Java",
+          "Spring Boot",
+          "OWASP SAMM / ASVS",
+          "SAST",
+          "SCA"
+        ]
+      },
+      {
+        "company": "Danske Bank",
+        "title": "Senior Software Engineer",
+        "dates": "aug. 2018 – sep. 2019",
+        "years": "2018 – 2019",
+        "location": "Aarhus",
+        "text": "Arbejdede på en ny EDI-platform i C# på OpenShift og byggede som lead developer en sikker kundeonboarding med OpenPGP-baseret filkryptering.",
+        "employment": "Fuldtid",
+        "tech": [
+          "C#/.NET",
+          "OpenShift",
+          "DB2",
+          "SQL",
+          "REST-API'er"
+        ]
+      },
+      {
+        "company": "Trackunit",
+        "title": "Software Engineer",
+        "dates": "nov. 2017 – jul. 2018",
+        "years": "2017 – 2018",
+        "location": "Aalborg",
+        "text": "Byggede API'er og microservices i AWS til realtidstelemetri fra forbundne entreprenørmaskiner med Kafka og Apache Flink og flyttede legacy-services over på den nye platform.",
+        "employment": "Fuldtid",
+        "tech": [
+          "Java",
+          "Kafka",
+          "AWS (ECS Fargate, S3)",
+          "C#/.NET",
+          "Spring Boot",
+          "REST-API'er"
+        ]
+      },
+      {
+        "company": "Cryptomathic",
+        "title": "Software Engineer",
+        "dates": "jan. 2016 – okt. 2017",
+        "years": "2016 – 2017",
+        "location": "Aarhus",
+        "text": "Udviklede middleware og API'er til hardware security modules (HSM'er) og kvalificerede elektroniske signaturer under eIDAS.",
+        "employment": "Fuldtid",
+        "tech": [
+          "Java",
+          "C#/.NET",
+          "REST-API'er",
+          "Jenkins",
+          "SQL"
+        ]
+      }
+    ],
+    "skills": [
+      {
+        "label": "Sprog og frameworks",
+        "items": [
+          "Java",
+          "Quarkus",
+          "Spring Boot",
+          "C#/.NET",
+          "Go",
+          "SQL",
+          "Bash",
+          "Rego"
+        ]
+      },
+      {
+        "label": "Data og integration",
+        "items": [
+          "Kafka",
+          "CDC",
+          "IBM MQ",
+          "SQS/SNS",
+          "REST-API'er",
+          "DB2",
+          "PostgreSQL/Aurora",
+          "MongoDB"
+        ]
+      },
+      {
+        "label": "Platform og cloud",
+        "items": [
+          "Kubernetes",
+          "OpenShift",
+          "AKS",
+          "AWS (ECS Fargate, S3)",
+          "Terraform/OpenTofu",
+          "Argo CD",
+          "Linux"
+        ]
+      },
+      {
+        "label": "Sikkerhed",
+        "items": [
+          "OPA/Styra",
+          "OAuth2/OIDC",
+          "policy-as-code",
+          "trusselsmodellering",
+          "SAST",
+          "SCA",
+          "OWASP SAMM / ASVS"
+        ]
+      },
+      {
+        "label": "Levering",
+        "items": [
+          "GitHub Actions",
+          "Azure DevOps",
+          "Jenkins",
+          "GitOps"
+        ]
+      },
+      {
+        "label": "AI-assisteret udvikling",
+        "items": [
+          "GitHub Copilot",
+          "Claude Code",
+          "Codex",
+          "agentiske workflows"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "company": "Aalborg University",
+        "title": "Ph.d. i datalogi",
+        "dates": "aug. 2012 – jan. 2016",
+        "years": "2012 – 2016",
+        "location": "Aalborg",
+        "text": "Afhandlingen “Synchronization and Control of Quantitative Systems”: formelle metoder og verifikation af distribuerede systemer.",
+        "employment": "",
+        "tech": []
+      },
+      {
+        "company": "Aalborg University",
+        "title": "Kandidat i datalogi og matematik",
+        "dates": "2007 – 2012",
+        "years": "2007 – 2012",
+        "location": "Aalborg",
+        "text": "",
+        "employment": "",
+        "tech": []
+      }
+    ],
+    "examiner": [
+      {
+        "company": "",
+        "title": "Censorkorpset i Datalogi",
+        "dates": "",
+        "years": "2018 – nu",
+        "location": "",
+        "text": "",
+        "employment": "",
+        "tech": []
+      },
+      {
+        "company": "",
+        "title": "Civilingeniørcensorkorpset",
+        "dates": "",
+        "years": "2022 – 2026",
+        "location": "",
+        "text": "",
+        "employment": "",
+        "tech": []
+      }
+    ],
+    "roles": [
+      "Lead Developer",
+      "Software Architect",
+      "Solution Architect",
+      "Security Architect",
+      "Backend Developer",
+      "Platform Engineer"
+    ]
+  },
+  "en": {
+    "lang": "en",
+    "url": "https://simlau.dk/",
+    "alternates": [
+      {
+        "lang": "en",
+        "url": "https://simlau.dk/"
+      },
+      {
+        "lang": "da",
+        "url": "https://simlau.dk/da/"
+      },
+      {
+        "lang": "x-default",
+        "url": "https://simlau.dk/"
+      }
+    ],
+    "name": "Simon Borgbjerg Laursen",
+    "title": "Freelance Java Developer & Software Architect",
+    "headline": "Freelance Java Developer & Software Architect | Spring Boot, Quarkus, Kafka, Kubernetes, AWS | Legacy modernization & application security | Aarhus",
+    "location": "Aarhus, Denmark",
+    "availability": "Available for freelance assignments from January 2027 · Aarhus, Central Denmark & remote",
+    "description": "Freelance Java developer and software architect in Aarhus: Java, Spring Boot, Quarkus, Kafka, Kubernetes, AWS. Legacy modernization and application security.",
+    "about": [
+      "Freelance Java developer and software architect in Aarhus, with 10 years of backend and platform work in banking and other regulated environments. I modernize legacy systems into event-driven Java services on Kubernetes, AWS, and Azure, and I build security in from the start: authorization, OAuth2/OIDC, and policy-as-code.",
+      "Five years at Bankdata, most recently as lead developer. PhD in distributed systems."
+    ],
+    "keywords": [
+      "Java",
+      "Spring Boot",
+      "Quarkus",
+      "Kafka",
+      "Kubernetes",
+      "AWS",
+      "Legacy modernization",
+      "Event-driven architecture",
+      "Platform engineering",
+      "Application security",
+      "Banking"
+    ],
+    "labels": {
+      "about": "About",
+      "experience": "Experience",
+      "earlier": "Earlier",
+      "skills": "Skills & Technologies",
+      "education": "Education",
+      "examiner": "External Examiner",
+      "contact": "Contact",
+      "contact_text": "Available for freelance assignments, and for shorter architecture and security design reviews at any time. Reach me by email or on LinkedIn.",
+      "present": "present",
+      "full_cv": "Download full CV (PDF)",
+      "freelance": "Freelance",
+      "employee": "Full-time",
+      "months": [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
+      ],
+      "months_long": [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+      ],
+      "groups": null
+    },
+    "contact": {
+      "email": "mail@simlau.dk",
+      "phone": "",
+      "website": "simlau.dk",
+      "linkedin": "linkedin.com/in/simlau",
+      "github": "github.com/simlau"
+    },
+    "pdf": "/Simon-B-Laursen-CV.pdf",
+    "experience": [
+      {
+        "company": "DSV",
+        "title": "Senior Java Developer (External Consultant)",
+        "dates": "Aug 2026 – present",
+        "years": "2026 – present",
+        "location": "Remote",
+        "text": "Moving business logic from legacy .NET integration services to Java 25/Spring Boot microservices on AKS, deciding per service whether to migrate, replace, or retire it.",
+        "employment": "Freelance",
+        "tech": [
+          "Java",
+          "Spring Boot",
+          "Kafka",
+          "MongoDB",
+          "AKS",
+          "OAuth2/OIDC"
+        ]
+      },
+      {
+        "company": "Bankdata",
+        "title": "Lead Software Developer",
+        "dates": "Aug 2025 – Aug 2026",
+        "years": "2025 – 2026",
+        "location": "Aarhus",
+        "text": "Led the enabling team behind a CDC- and Kafka-based platform that decouples application teams from DB2 and mainframe, moving them from synchronous calls to eventual consistency.",
+        "employment": "Full-time",
+        "tech": [
+          "Java",
+          "Go",
+          "Kafka",
+          "CDC",
+          "PostgreSQL/Aurora",
+          "Kubernetes",
+          "AWS (ECS Fargate, S3)"
+        ]
+      },
+      {
+        "company": "Bankdata",
+        "title": "Lead Developer (External Consultant)",
+        "dates": "Aug 2023 – Jul 2025",
+        "years": "2023 – 2025",
+        "location": "Aarhus",
+        "text": "Lead developer on Bankdata's first customer-data platform on AWS: a Java/Quarkus transaction engine processing 3.5 billion transactions for 1.4 million customers.",
+        "employment": "Freelance",
+        "tech": [
+          "Java",
+          "Quarkus",
+          "AWS (ECS Fargate, S3)",
+          "IBM MQ",
+          "SQS/SNS",
+          "Terraform/OpenTofu"
+        ]
+      },
+      {
+        "company": "Bankdata",
+        "title": "External Consultant",
+        "dates": "Jun 2021 – Jul 2023",
+        "years": "2021 – 2023",
+        "location": "Silkeborg",
+        "text": "Helped take Bankdata's policy-as-code authorization platform on Open Policy Agent from proof of concept to production. Today all teams at Bankdata use it.",
+        "employment": "Freelance",
+        "tech": [
+          "OPA/Styra",
+          "Rego",
+          "OAuth2/OIDC",
+          "Kubernetes",
+          "Java"
+        ]
+      }
+    ],
+    "earlier": [
+      {
+        "company": "Danske Bank",
+        "title": "Senior Software Engineer",
+        "dates": "Oct 2020 – May 2021",
+        "years": "2020 – 2021",
+        "location": "Brabrand",
+        "text": "Led proof-of-concept work on CDC from DB2 to Kafka and helped design Spring Boot services and blueprints for moving mainframe applications to OpenShift, with AuthN/AuthZ built in.",
+        "employment": "Full-time",
+        "tech": [
+          "Java",
+          "Spring Boot",
+          "C#/.NET",
+          "Kafka",
+          "CDC",
+          "DB2"
+        ]
+      },
+      {
+        "company": "Alexandra Instituttet",
+        "title": "Senior Security Architect",
+        "dates": "Oct 2019 – Sep 2020",
+        "years": "2019 – 2020",
+        "location": "Aarhus",
+        "text": "Security architecture, threat modeling, and DevSecOps for connected products and backend services, plus Danish standardization work on IoT and OT security.",
+        "employment": "Full-time",
+        "tech": [
+          "threat modeling",
+          "Java",
+          "Spring Boot",
+          "OWASP SAMM / ASVS",
+          "SAST",
+          "SCA"
+        ]
+      },
+      {
+        "company": "Danske Bank",
+        "title": "Senior Software Engineer",
+        "dates": "Aug 2018 – Sep 2019",
+        "years": "2018 – 2019",
+        "location": "Aarhus",
+        "text": "Worked on a new EDI platform in C# on OpenShift and, as lead developer, built its secure customer onboarding with OpenPGP-based file encryption.",
+        "employment": "Full-time",
+        "tech": [
+          "C#/.NET",
+          "OpenShift",
+          "DB2",
+          "SQL",
+          "REST APIs"
+        ]
+      },
+      {
+        "company": "Trackunit",
+        "title": "Software Engineer",
+        "dates": "Nov 2017 – Jul 2018",
+        "years": "2017 – 2018",
+        "location": "Aalborg",
+        "text": "Built APIs and microservices on AWS for real-time telemetry from connected construction equipment with Kafka and Apache Flink, and migrated legacy services onto the new platform.",
+        "employment": "Full-time",
+        "tech": [
+          "Java",
+          "Kafka",
+          "AWS (ECS Fargate, S3)",
+          "C#/.NET",
+          "Spring Boot",
+          "REST APIs"
+        ]
+      },
+      {
+        "company": "Cryptomathic",
+        "title": "Software Engineer",
+        "dates": "Jan 2016 – Oct 2017",
+        "years": "2016 – 2017",
+        "location": "Aarhus",
+        "text": "Developed middleware and APIs for hardware security modules and qualified electronic signatures under eIDAS.",
+        "employment": "Full-time",
+        "tech": [
+          "Java",
+          "C#/.NET",
+          "REST APIs",
+          "Jenkins",
+          "SQL"
+        ]
+      }
+    ],
+    "skills": [
+      {
+        "label": "Languages & Frameworks",
+        "items": [
+          "Java",
+          "Quarkus",
+          "Spring Boot",
+          "C#/.NET",
+          "Go",
+          "SQL",
+          "Bash",
+          "Rego"
+        ]
+      },
+      {
+        "label": "Data & Integration",
+        "items": [
+          "Kafka",
+          "CDC",
+          "IBM MQ",
+          "SQS/SNS",
+          "REST APIs",
+          "DB2",
+          "PostgreSQL/Aurora",
+          "MongoDB"
+        ]
+      },
+      {
+        "label": "Platforms & Cloud",
+        "items": [
+          "Kubernetes",
+          "OpenShift",
+          "AKS",
+          "AWS (ECS Fargate, S3)",
+          "Terraform/OpenTofu",
+          "Argo CD",
+          "Linux"
+        ]
+      },
+      {
+        "label": "Security",
+        "items": [
+          "OPA/Styra",
+          "OAuth2/OIDC",
+          "policy-as-code",
+          "threat modeling",
+          "SAST",
+          "SCA",
+          "OWASP SAMM / ASVS"
+        ]
+      },
+      {
+        "label": "Delivery",
+        "items": [
+          "GitHub Actions",
+          "Azure DevOps",
+          "Jenkins",
+          "GitOps"
+        ]
+      },
+      {
+        "label": "AI-assisted development",
+        "items": [
+          "GitHub Copilot",
+          "Claude Code",
+          "Codex",
+          "agentic workflows"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "company": "Aalborg University",
+        "title": "PhD in Computer Science",
+        "dates": "Aug 2012 – Jan 2016",
+        "years": "2012 – 2016",
+        "location": "Aalborg",
+        "text": "Dissertation “Synchronization and Control of Quantitative Systems”: formal methods and verification of distributed systems.",
+        "employment": "",
+        "tech": []
+      },
+      {
+        "company": "Aalborg University",
+        "title": "MSc in Computer Science and Mathematics",
+        "dates": "2007 – 2012",
+        "years": "2007 – 2012",
+        "location": "Aalborg",
+        "text": "",
+        "employment": "",
+        "tech": []
+      }
+    ],
+    "examiner": [
+      {
+        "company": "",
+        "title": "Censorkorpset i Datalogi",
+        "dates": "",
+        "years": "2018 – present",
+        "location": "",
+        "text": "",
+        "employment": "",
+        "tech": []
+      },
+      {
+        "company": "",
+        "title": "Civilingeniørcensorkorpset",
+        "dates": "",
+        "years": "2022 – 2026",
+        "location": "",
+        "text": "",
+        "employment": "",
+        "tech": []
+      }
+    ],
+    "roles": [
+      "Lead Developer",
+      "Software Architect",
+      "Solution Architect",
+      "Security Architect",
+      "Backend Developer",
+      "Platform Engineer"
+    ]
+  }
+}
