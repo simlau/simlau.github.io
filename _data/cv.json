@@ -18,7 +18,7 @@
     ],
     "name": "Simon Borgbjerg Laursen",
     "title": "Freelance Java-udvikler & softwarearkitekt",
-    "headline": "Freelance Java-udvikler & softwarearkitekt | Spring Boot, Quarkus, Kafka, Kubernetes, AWS | Legacy-modernisering & applikationssikkerhed | Aarhus",
+    "headline": "Freelance Java-udvikler & softwarearkitekt | Spring Boot, Quarkus, Kafka, Kubernetes, AWS | Legacy-modernisering & applikationssikkerhed | Aarhus | Ledig fra jan. 2027",
     "location": "Aarhus",
     "availability": "Ledig til freelanceopgaver fra januar 2027 · Aarhus, Midtjylland og remote",
     "description": "Freelance Java-udvikler og softwarearkitekt i Aarhus: Java, Spring Boot, Quarkus, Kafka, Kubernetes, AWS. Legacy-modernisering og applikationssikkerhed.",
@@ -50,7 +50,7 @@
       "contact_text": "Ledig til freelanceopgaver og altid til kortere arkitektur- og sikkerhedsreviews. Skriv til mig på mail eller LinkedIn.",
       "present": "nu",
       "full_cv": "Hent fuldt CV (PDF)",
-      "freelance": "Freelance",
+      "freelance": "Kontrakt",
       "employee": "Fuldtid",
       "months": [
         "jan.",
@@ -105,7 +105,7 @@
         "years": "2026 – nu",
         "location": "Remote",
         "text": "Flytter forretningslogik fra legacy .NET-integrationer til Java 25/Spring Boot-microservices på AKS og afgør for hver service, om den skal migreres, erstattes eller nedlægges.",
-        "employment": "Freelance",
+        "employment": "Kontrakt",
         "tech": [
           "Java",
           "Spring Boot",
@@ -140,7 +140,7 @@
         "years": "2023 – 2025",
         "location": "Aarhus",
         "text": "Lead developer på Bankdatas første kundedataplatform i AWS: en Java/Quarkus-transaktionsmotor, der behandler 3,5 mia. transaktioner for 1,4 mio. kunder.",
-        "employment": "Freelance",
+        "employment": "Kontrakt",
         "tech": [
           "Java",
           "Quarkus",
@@ -157,7 +157,7 @@
         "years": "2021 – 2023",
         "location": "Silkeborg",
         "text": "Var med til at tage Bankdatas policy-as-code-autorisationsplatform på Open Policy Agent fra proof of concept til produktion. I dag bruger alle teams i Bankdata den.",
-        "employment": "Freelance",
+        "employment": "Kontrakt",
         "tech": [
           "OPA/Styra",
           "Rego",
@@ -394,7 +394,7 @@
     ],
     "name": "Simon Borgbjerg Laursen",
     "title": "Freelance Java Developer & Software Architect",
-    "headline": "Freelance Java Developer & Software Architect | Spring Boot, Quarkus, Kafka, Kubernetes, AWS | Legacy modernization & application security | Aarhus",
+    "headline": "Freelance Java Developer & Software Architect | Spring Boot, Quarkus, Kafka, Kubernetes, AWS | Legacy modernization & application security | Aarhus | Available Jan 2027",
     "location": "Aarhus, Denmark",
     "availability": "Available for freelance assignments from January 2027 · Aarhus, Central Denmark & remote",
     "description": "Freelance Java developer and software architect in Aarhus: Java, Spring Boot, Quarkus, Kafka, Kubernetes, AWS. Legacy modernization and application security.",
@@ -426,7 +426,7 @@
       "contact_text": "Available for freelance assignments, and for shorter architecture and security design reviews at any time. Reach me by email or on LinkedIn.",
       "present": "present",
       "full_cv": "Download full CV (PDF)",
-      "freelance": "Freelance",
+      "freelance": "Contract",
       "employee": "Full-time",
       "months": [
         "Jan",
@@ -474,7 +474,7 @@
         "years": "2026 – present",
         "location": "Remote",
         "text": "Moving business logic from legacy .NET integration services to Java 25/Spring Boot microservices on AKS, deciding per service whether to migrate, replace, or retire it.",
-        "employment": "Freelance",
+        "employment": "Contract",
         "tech": [
           "Java",
           "Spring Boot",
@@ -509,7 +509,7 @@
         "years": "2023 – 2025",
         "location": "Aarhus",
         "text": "Lead developer on Bankdata's first customer-data platform on AWS: a Java/Quarkus transaction engine processing 3.5 billion transactions for 1.4 million customers.",
-        "employment": "Freelance",
+        "employment": "Contract",
         "tech": [
           "Java",
           "Quarkus",
@@ -526,7 +526,7 @@
         "years": "2021 – 2023",
         "location": "Silkeborg",
         "text": "Helped take Bankdata's policy-as-code authorization platform on Open Policy Agent from proof of concept to production. Today all teams at Bankdata use it.",
-        "employment": "Freelance",
+        "employment": "Contract",
         "tech": [
           "OPA/Styra",
           "Rego",
