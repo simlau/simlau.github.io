@@ -452,7 +452,7 @@
     <img class="sidebar-photo" src="{{ '/me.jpg' | relative_url }}" alt="{{ d.name | escape }}" width="140" height="140"/>
     <div>
       <h1 class="sidebar-name">{{ d.name | escape }}</h1>
-      <div class="sidebar-title">{{ d.title | escape }}</div>
+      <div class="sidebar-title">{{ d.title | escape | replace: "-", "&#8209;" }}</div>
       <div class="sidebar-location">{{ d.location | escape }}</div>
       <nav class="lang-switch" aria-label="Language">
         {%- for a in d.alternates %}{% if a.lang == 'x-default' %}{% continue %}{% endif %}
