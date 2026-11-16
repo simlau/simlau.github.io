@@ -38,6 +38,6 @@ GitHub Pages builds and deploys automatically on push — local serving is optio
 - `_config.yml` — Jekyll config: site title, the `jekyll-sitemap` plugin, and `include` for the CV PDF (all other PDFs stay excluded, e.g. the letter of recommendation).
 - `_layouts/default.html` — CSS and structure for both pages. It renders everything from `site.data.cv[page.lang]` with Liquid; every string goes through `| escape` (JSON-LD uses `| jsonify`). **Edit this file for structure and style only.**
 - `index.md` (`lang: en`) and `da/index.md` (`lang: da`, `permalink: /da/`) — front matter only.
-- `og-image-v4.png` — share image with the title; regenerate it by hand if the title in `cv.yaml` changes.
+- `og-image-v5.png` — share image with the title; regenerate it by hand if the title in `cv.yaml` changes.
 - `CNAME` — Custom domain `simlau.dk` for GitHub Pages.
 - `favicon.ico` — Site favicon, referenced in the layout `<head>`.
