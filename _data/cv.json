@@ -17,19 +17,21 @@
       }
     ],
     "name": "Simon Borgbjerg Laursen",
-    "title": "Freelance Java-udvikler & softwarearkitekt",
-    "headline": "Freelance Java-udvikler & softwarearkitekt | Spring Boot, Quarkus, Kafka, Kubernetes, AWS | Legacy-modernisering & applikationssikkerhed | Aarhus | Ledig fra jan. 2027",
+    "title": "Freelance backend-udvikler & softwarearkitekt",
+    "headline": "Freelance backend-udvikler & softwarearkitekt | Java, C#/.NET, Go, Kafka, Kubernetes, AWS | Legacy-modernisering & applikationssikkerhed | Aarhus | Ledig fra jan. 2027",
     "location": "Aarhus",
     "availability": "Ledig til freelanceopgaver fra januar 2027 · Aarhus, Midtjylland og remote",
-    "description": "Freelance Java-udvikler og softwarearkitekt i Aarhus: Java, Spring Boot, Quarkus, Kafka, Kubernetes, AWS. Legacy-modernisering og applikationssikkerhed.",
+    "description": "Freelance backend-udvikler og softwarearkitekt i Aarhus: Java, C#/.NET, Go, Kafka, Kubernetes, AWS. Legacy-modernisering og applikationssikkerhed.",
     "about": [
-      "Freelance Java-udvikler og softwarearkitekt i Aarhus med 10 års erfaring med backend og platforme i bank og andre regulerede miljøer. Jeg moderniserer legacy-systemer til eventdrevne Java-services på Kubernetes, AWS og Azure og bygger sikkerheden ind fra starten: autorisation, OAuth2/OIDC og policy-as-code.",
+      "Freelance backend-udvikler og softwarearkitekt i Aarhus med 10 års erfaring fra bank og andre regulerede miljøer. Jeg moderniserer legacy-systemer til eventdrevne services i Java, C#/.NET og Go på Kubernetes, AWS og Azure og bygger sikkerheden ind fra starten: autorisation, OAuth2/OIDC og policy-as-code.",
       "Fem år hos Bankdata, senest som lead developer. Ph.d. i distribuerede systemer."
     ],
     "keywords": [
+      "Backend",
       "Java",
+      "C#/.NET",
+      "Go",
       "Spring Boot",
-      "Quarkus",
       "Kafka",
       "Kubernetes",
       "AWS",
@@ -393,19 +395,21 @@
       }
     ],
     "name": "Simon Borgbjerg Laursen",
-    "title": "Freelance Java Developer & Software Architect",
-    "headline": "Freelance Java Developer & Software Architect | Spring Boot, Quarkus, Kafka, Kubernetes, AWS | Legacy modernization & application security | Aarhus | Available Jan 2027",
+    "title": "Freelance Backend Developer & Software Architect",
+    "headline": "Freelance Backend Developer & Software Architect | Java, C#/.NET, Go, Kafka, Kubernetes, AWS | Legacy modernization & application security | Aarhus | Available Jan 2027",
     "location": "Aarhus, Denmark",
     "availability": "Available for freelance assignments from January 2027 · Aarhus, Central Denmark & remote",
-    "description": "Freelance Java developer and software architect in Aarhus: Java, Spring Boot, Quarkus, Kafka, Kubernetes, AWS. Legacy modernization and application security.",
+    "description": "Freelance backend developer and software architect in Aarhus: Java, C#/.NET, Go, Kafka, Kubernetes, AWS. Legacy modernization and application security.",
     "about": [
-      "Freelance Java developer and software architect in Aarhus, with 10 years of backend and platform work in banking and other regulated environments. I modernize legacy systems into event-driven Java services on Kubernetes, AWS, and Azure, and I build security in from the start: authorization, OAuth2/OIDC, and policy-as-code.",
+      "Freelance backend developer and software architect in Aarhus, with 10 years of experience in banking and other regulated environments. I modernize legacy systems into event-driven services in Java, C#/.NET, and Go on Kubernetes, AWS, and Azure, and I build security in from the start: authorization, OAuth2/OIDC, and policy-as-code.",
       "Five years at Bankdata, most recently as lead developer. PhD in distributed systems."
     ],
     "keywords": [
+      "Backend",
       "Java",
+      "C#/.NET",
+      "Go",
       "Spring Boot",
-      "Quarkus",
       "Kafka",
       "Kubernetes",
       "AWS",
