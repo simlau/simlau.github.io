@@ -141,7 +141,7 @@
         "dates": "aug. 2023 – jul. 2025",
         "years": "2023 – 2025",
         "location": "Aarhus",
-        "text": "Lead developer på Bankdatas første kundedataplatform i AWS: en Java/Quarkus-transaktionsmotor, der behandler 3,5 mia. transaktioner for 1,4 mio. kunder.",
+        "text": "Lead developer på Bankdatas første applikation med kundedata på AWS: en eventdrevet motor i Java/Quarkus, der kategoriserer 3,5 milliarder transaktioner for 1,4 millioner kunder.",
         "employment": "Kontrakt",
         "tech": [
           "Java",
@@ -512,7 +512,7 @@
         "dates": "Aug 2023 – Jul 2025",
         "years": "2023 – 2025",
         "location": "Aarhus",
-        "text": "Lead developer on Bankdata's first customer-data platform on AWS: a Java/Quarkus transaction engine processing 3.5 billion transactions for 1.4 million customers.",
+        "text": "Lead developer on Bankdata's first application with customer data on AWS: an event-driven Java/Quarkus engine that categorizes 3.5 billion transactions for 1.4 million customers.",
         "employment": "Contract",
         "tech": [
           "Java",
