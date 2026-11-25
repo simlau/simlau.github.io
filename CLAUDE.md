@@ -8,12 +8,12 @@ Personal portfolio/consulting website for Simon B. Laursen, hosted on GitHub Pag
 
 ## Where the content comes from
 
-The content is generated from `cv.yaml` in `../CV-Normal-Long` (the CV's single source of truth) by `cvtool site push`, which writes, commits, and pushes two files here:
+The content is generated from `cv.yaml` in `../cv` (the CV's single source of truth) by `cvtool site push`, which writes, commits, and pushes two files here:
 
 - `_data/cv.json` — both pages' content (`en`, `da`), already resolved: dates, titles, technology lines, labels.
 - `Simon-B-Laursen-CV.pdf` — the full CV, linked from both pages.
 
-Never edit these two files by hand; edit `cv.yaml` (its `short` block and the entries' `short` texts) and run, in `../CV-Normal-Long`:
+Never edit these two files by hand; edit `cv.yaml` (its `short` block and the entries' `short` texts) and run, in `../cv`:
 
 ```sh
 go run ./cmd/cvtool site diff   # what would change here
@@ -27,7 +27,7 @@ go run ./cmd/cvtool site push   # asks y/N, commits here, pushes (publishes siml
 Local serving requires Ruby 3+ with Jekyll and `jekyll-sitemap`. To build with the current data without committing it:
 
 ```sh
-go run ./cmd/cvtool site diff --dump ../simlau.github.io   # in ../CV-Normal-Long; writes _data/cv.json and the PDF here, untracked
+go run ./cmd/cvtool site diff --dump ../simlau.github.io   # in ../cv; writes _data/cv.json and the PDF here, untracked
 jekyll build -s . -d /tmp/site                              # then delete the two dumped files again
 ```
 
