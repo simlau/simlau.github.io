@@ -386,8 +386,9 @@ ul.exp-outcome {
 .contact-text { margin-bottom: 20px; }
 
 /* ── SUBPAGES (cv.yaml pages) ── */
-.tag-link { text-decoration: none; }
-.tag-link:hover { color: #38bdf8; text-decoration: underline; }
+.tag-link { text-decoration: none; color: #38bdf8; box-shadow: inset 0 0 0 1px #38bdf8; }
+.tag-link::after { content: " →"; }
+.tag-link:hover { background: #0c2a3f; }
 
 .page-title {
   font-size: 28px;
