@@ -16,6 +16,7 @@
   <meta property="og:title" content="{{ d.name | escape }} | {{ d.title | escape }}"/>
   <meta property="og:description" content="{{ d.description | escape }}"/>
   <meta property="og:locale" content="{% if d.lang == 'da' %}da_DK{% else %}en_GB{% endif %}"/>
+  <meta property="og:locale:alternate" content="{% if d.lang == 'da' %}en_GB{% else %}da_DK{% endif %}"/>
   <meta property="og:image" content="https://simlau.dk/og-image-v5.png"/>
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
@@ -28,14 +29,24 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
+    "@graph": [
+  {
+    "@type": "WebSite",
+    "@id": "https://simlau.dk/#website",
+    "url": "https://simlau.dk/",
+    "name": {{ d.name | jsonify }},
+    "alternateName": ["Simon Laursen", "Simon B. Laursen"],
+    "inLanguage": ["en", "da"],
+    "publisher": { "@id": "https://simlau.dk/#person" }
+  },
+  {
     "@type": "Person",
     "@id": "https://simlau.dk/#person",
     "name": {{ d.name | jsonify }},
     "alternateName": ["Simon B. Laursen", "Simon Laursen"],
     "jobTitle": {{ d.title | jsonify }},
     "description": {{ d.description | jsonify }},
-    "url": {{ d.url | jsonify }},
-    "inLanguage": {{ d.lang | jsonify }},
+    "url": "https://simlau.dk/",
     "image": "https://simlau.dk/me.jpg",
     "email": {{ d.contact.email | prepend: "mailto:" | jsonify }},
     "address": {
@@ -54,6 +65,8 @@
       "https://scholar.google.com/citations?user=xbUxPqwAAAAJ",
       "https://services2.brics.dk/censor/censor-870",
       "https://aviaia.io/f/mail-6dcf7fd5"
+    ]
+  }
     ]
   }
   </script>
@@ -138,7 +151,7 @@
       {%- for e in d.experience %}
       <div class="exp-item">
         <div class="exp-header">
-          <span class="exp-company">{{ e.company | escape }}</span>
+          <h3 class="exp-company">{{ e.company | escape }}</h3>
           <span class="exp-dates">{{ e.dates | escape }}</span>
         </div>
         <div class="exp-role">{{ e.title | escape }}{% if e.location != "" %} <span class="team-type">· {{ e.location | escape }}</span>{% endif %}</div>
@@ -186,7 +199,7 @@
       {%- for e in d.education %}
       <div class="exp-item">
         <div class="exp-header">
-          <span class="exp-company">{{ e.company | escape }}</span>
+          <h3 class="exp-company">{{ e.company | escape }}</h3>
           <span class="exp-dates">{{ e.years | escape }}</span>
         </div>
         <div class="exp-role">{{ e.title | escape }}</div>
