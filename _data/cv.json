@@ -21,9 +21,10 @@
     "headline": "Freelance backend-udvikler & softwarearkitekt | Java, C#/.NET, Go, Kafka, Kubernetes, AWS | Legacy-modernisering & applikationssikkerhed | Aarhus | Ledig fra jan. 2027",
     "location": "Aarhus",
     "availability": "Ledig til freelanceopgaver fra januar 2027 · Aarhus, Midtjylland og remote",
-    "description": "Freelance backend-udvikler og softwarearkitekt i Aarhus: Java, C#/.NET, Go, Kafka, Kubernetes, AWS. Legacy-modernisering og applikationssikkerhed.",
+    "description": "Freelance backend-udvikler og softwarearkitekt i Aarhus: Java, C#/.NET, Go, Kafka, Kubernetes, AWS. Platform engineering, legacy-modernisering og applikationssikkerhed.",
     "about": [
       "Freelance backend-udvikler og softwarearkitekt i Aarhus med 10 års erfaring fra bank og andre regulerede miljøer. Jeg moderniserer legacy-systemer til eventdrevne services i Java, C#/.NET og Go på Kubernetes, AWS og Azure og bygger sikkerheden ind fra starten: autorisation, OAuth2/OIDC og policy-as-code.",
+      "Jeg bygger også interne platforme for udviklingsteams: Kubernetes-operatorer i Go, Infrastructure as Code og GitOps, så teams selv kan oprette databaser, Kafka og cloud-ressourcer.",
       "Fem år hos Bankdata, senest som lead developer. Ph.d. i distribuerede systemer."
     ],
     "keywords": [
@@ -35,9 +36,9 @@
       "Kafka",
       "Kubernetes",
       "AWS",
+      "Platform engineering",
       "Legacy-modernisering",
       "Eventdrevet arkitektur",
-      "Platform engineering",
       "Applikationssikkerhed",
       "Bank og finans"
     ],
@@ -123,7 +124,7 @@
         "dates": "aug. 2025 – aug. 2026",
         "years": "2025 – 2026",
         "location": "Aarhus",
-        "text": "Ledede enabling-teamet bag en CDC- og Kafka-baseret platform, der afkobler applikationsteams fra DB2 og mainframe og flytter dem fra synkrone kald til eventual consistency.",
+        "text": "Ledede enabling-teamet bag en CDC- og Kafka-baseret platform, der afkobler applikationsteams fra DB2 og mainframe og flytter dem fra synkrone kald til eventual consistency. Teams opretter selv databaser gennem en Kubernetes-controller, vi skrev i Go.",
         "employment": "Fuldtid",
         "tech": [
           "Java",
@@ -158,13 +159,15 @@
         "dates": "jun. 2021 – jul. 2023",
         "years": "2021 – 2023",
         "location": "Silkeborg",
-        "text": "Var med til at tage Bankdatas policy-as-code-autorisationsplatform på Open Policy Agent fra proof of concept til produktion. I dag bruger alle teams i Bankdata den.",
+        "text": "Var med til at tage Bankdatas policy-as-code-autorisationsplatform på Open Policy Agent fra proof of concept til produktion. Jeg byggede dens Kubernetes-operator i Go, der konfigurerer politikker og OPA for hvert team. I dag bruger alle teams i Bankdata den.",
         "employment": "Kontrakt",
         "tech": [
           "OPA/Styra",
           "Rego",
-          "OAuth2/OIDC",
+          "Go",
+          "Kubebuilder",
           "Kubernetes",
+          "OAuth2/OIDC",
           "Java"
         ]
       }
@@ -286,10 +289,13 @@
         "items": [
           "Kubernetes",
           "OpenShift",
+          "ROSA",
           "AKS",
           "AWS (ECS Fargate, S3)",
           "Terraform/OpenTofu",
           "Argo CD",
+          "Kubebuilder",
+          "Java Operator SDK",
           "Linux"
         ]
       },
@@ -399,9 +405,10 @@
     "headline": "Freelance Backend Developer & Software Architect | Java, C#/.NET, Go, Kafka, Kubernetes, AWS | Legacy modernization & application security | Aarhus | Available Jan 2027",
     "location": "Aarhus, Denmark",
     "availability": "Available for freelance assignments from January 2027 · Aarhus, Central Denmark & remote",
-    "description": "Freelance backend developer and software architect in Aarhus: Java, C#/.NET, Go, Kafka, Kubernetes, AWS. Legacy modernization and application security.",
+    "description": "Freelance backend developer and software architect in Aarhus: Java, C#/.NET, Go, Kafka, Kubernetes, AWS. Platform engineering, legacy modernization, and application security.",
     "about": [
       "Freelance backend developer and software architect in Aarhus, with 10 years of experience in banking and other regulated environments. I modernize legacy systems into event-driven services in Java, C#/.NET, and Go on Kubernetes, AWS, and Azure, and I build security in from the start: authorization, OAuth2/OIDC, and policy-as-code.",
+      "I also build internal platforms for development teams: Kubernetes operators in Go, Infrastructure as Code, and GitOps, so teams can provision databases, Kafka, and cloud resources themselves.",
       "Five years at Bankdata, most recently as lead developer. PhD in distributed systems."
     ],
     "keywords": [
@@ -413,9 +420,9 @@
       "Kafka",
       "Kubernetes",
       "AWS",
+      "Platform engineering",
       "Legacy modernization",
       "Event-driven architecture",
-      "Platform engineering",
       "Application security",
       "Banking"
     ],
@@ -494,7 +501,7 @@
         "dates": "Aug 2025 – Aug 2026",
         "years": "2025 – 2026",
         "location": "Aarhus",
-        "text": "Led the enabling team behind a CDC- and Kafka-based platform that decouples application teams from DB2 and mainframe, moving them from synchronous calls to eventual consistency.",
+        "text": "Led the enabling team behind a CDC- and Kafka-based platform that decouples application teams from DB2 and mainframe, moving them from synchronous calls to eventual consistency. Teams provision their own databases through a Kubernetes controller we wrote in Go.",
         "employment": "Full-time",
         "tech": [
           "Java",
@@ -529,13 +536,15 @@
         "dates": "Jun 2021 – Jul 2023",
         "years": "2021 – 2023",
         "location": "Silkeborg",
-        "text": "Helped take Bankdata's policy-as-code authorization platform on Open Policy Agent from proof of concept to production. Today all teams at Bankdata use it.",
+        "text": "Helped take Bankdata's policy-as-code authorization platform on Open Policy Agent from proof of concept to production. I built its Kubernetes operator in Go, which configures policies and OPA for each team. Today all teams at Bankdata use it.",
         "employment": "Contract",
         "tech": [
           "OPA/Styra",
           "Rego",
-          "OAuth2/OIDC",
+          "Go",
+          "Kubebuilder",
           "Kubernetes",
+          "OAuth2/OIDC",
           "Java"
         ]
       }
@@ -657,10 +666,13 @@
         "items": [
           "Kubernetes",
           "OpenShift",
+          "ROSA",
           "AKS",
           "AWS (ECS Fargate, S3)",
           "Terraform/OpenTofu",
           "Argo CD",
+          "Kubebuilder",
+          "Java Operator SDK",
           "Linux"
         ]
       },
