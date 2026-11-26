@@ -384,3 +384,22 @@ ul.exp-outcome {
 
 .about-text + .about-text { margin-top: 12px; }
 .contact-text { margin-bottom: 20px; }
+
+/* ── SUBPAGES (cv.yaml pages) ── */
+.tag-link { text-decoration: none; }
+.tag-link:hover { color: #38bdf8; text-decoration: underline; }
+
+.page-title {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #f1f5f9;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.principles { display: flex; flex-direction: column; gap: 20px; }
+.principle-title { font-size: 14px; font-weight: 700; color: #e2e8f0; margin-bottom: 4px; }
+
+.now-list { color: #94a3b8; font-size: 14px; line-height: 1.8; padding-left: 18px; margin-top: 12px; }
+.now-list li + li { margin-top: 4px; }

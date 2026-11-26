@@ -4,11 +4,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-Personal portfolio/consulting website for Simon B. Laursen, hosted on GitHub Pages at `simlau.dk`. Built with Jekyll using a fully custom layout — no theme. The site has two pages, English at `/` and Danish at `/da/`, deployed automatically by GitHub Pages on every push to `main`.
+Personal portfolio/consulting website for Simon B. Laursen, hosted on GitHub Pages at `simlau.dk`. Built with Jekyll using a fully custom layout — no theme. The site has a front page in English at `/` and Danish at `/da/`, plus subpages from `cv.yaml` (`/platform-engineering/`, `/da/platform-engineering/`), deployed automatically by GitHub Pages on every push to `main`.
 
 ## Where the content comes from
 
-The content is generated from `cv.yaml` in `../cv` (the CV's single source of truth) by `cvtool site push`, which writes, commits, and pushes two files here:
+The content is generated from `cv.yaml` in `../cv` (the CV's single source of truth) by `cvtool site push`, which writes, commits, and pushes these files here (plus the subpage stubs, see Architecture):
 
 - `_data/cv.json` — both pages' content (`en`, `da`), already resolved: dates, titles, technology lines, labels.
 - `Simon-B-Laursen-CV.pdf` — the full CV, linked from both pages.
@@ -38,7 +38,10 @@ GitHub Pages builds and deploys automatically on push — local serving is optio
 - `_config.yml` — Jekyll config: site title, the `jekyll-sitemap` plugin, and `include` for the CV PDF (all other PDFs stay excluded, e.g. the letter of recommendation).
 - `assets/site.css` — all CSS. Keep it out of the layout: see Security headers.
 - `_layouts/default.html` — structure for both pages. It renders everything from `site.data.cv[page.lang]` with Liquid; every string goes through `| escape` (JSON-LD uses `| jsonify`). **Edit this file for structure and style only.**
+- `_includes/head.html`, `sidebar.html`, `contact.html` — shared by both layouts. The layout assigns the variables they read (`meta_title`, `meta_description`, `canonical`, `alternates`, `og_type`, `name_tag`, `nav`, `contact_label`, and `webpage` on subpages) before including them. JSON-LD is one `@graph`: `WebSite` (`#website`) and `Person` (`#person`) on every page, plus a `WebPage` on subpages.
+- `_layouts/page.html` — subpages from `pages:` in `cv.yaml` (e.g. `/platform-engineering/`, `/da/platform-engineering/`), rendered from `site.data.cv[page.lang].pages[page.slug]`. The front page links to them from the keyword tag named by the page's `keyword` (`links` in the data) and from the sidebar nav.
 - `index.md` (`lang: en`) and `da/index.md` (`lang: da`, `permalink: /da/`) — front matter only.
+- `<slug>/index.md` and `da/<slug>/index.md` — stub files written and removed by `cvtool site push` (they carry a "Written by cvtool site" marker). Never edit them by hand; add or remove a page in `cv.yaml`.
 - `og-image-v5.png` — share image with the title; regenerate it by hand if the title in `cv.yaml` changes.
 - `CNAME` — Custom domain `simlau.dk` for GitHub Pages.
 - `favicon.ico` — Site favicon, referenced in the layout `<head>`.

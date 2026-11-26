@@ -62,7 +62,17 @@
       "https://services2.brics.dk/censor/censor-870",
       "https://aviaia.io/f/mail-6dcf7fd5"
     ]
-  }
+  }{% if webpage %},
+  {
+    "@type": "WebPage",
+    "@id": {{ webpage.url | append: "#webpage" | jsonify }},
+    "url": {{ webpage.url | jsonify }},
+    "name": {{ meta_title | jsonify }},
+    "description": {{ webpage.description | jsonify }},
+    "inLanguage": {{ webpage.lang | jsonify }},
+    "isPartOf": { "@id": "https://simlau.dk/#website" },
+    "about": { "@id": "https://simlau.dk/#person" }
+  }{% endif %}
     ]
   }
   </script>

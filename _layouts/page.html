@@ -1,0 +1,97 @@
+{%- assign d = site.data.cv[page.lang] -%}
+{%- assign p = d.pages[page.slug] -%}
+{%- capture meta_title %}{{ d.name }} | {{ p.title }}{% endcapture -%}
+{%- assign meta_description = p.description -%}
+{%- assign canonical = p.url -%}
+{%- assign alternates = p.alternates -%}
+{%- assign og_type = "website" -%}
+{%- assign name_tag = "div" -%}
+{%- assign contact_label = p.labels.contact -%}
+{%- assign webpage = p -%}
+{%- capture nav %}
+    <a href="#principles">{{ p.labels.principles | escape }}</a>
+    <a href="#cases">{{ p.labels.cases | escape }}</a>
+    <a href="#now">{{ p.labels.now | escape }}</a>
+    <a href="#skills">{{ p.labels.skills | escape }}</a>
+    <a href="#contact">{{ p.labels.contact | escape }}</a>
+    <a href="{{ d.url }}">{{ p.labels.profile | escape }}</a>{% endcapture -%}
+<!DOCTYPE html>
+<html lang="{{ d.lang }}">
+<head>
+{% include head.html %}
+</head>
+<body>
+
+<!-- Content comes from _data/cv.json (pages.{{ page.slug }}), generated from cv.yaml by `cvtool site push`. Edit this file for structure and style only. -->
+
+{% include sidebar.html %}
+
+<main class="main">
+
+  <a class="cv-download" href="{{ d.url }}">{{ p.labels.profile | escape }}</a>
+
+  <section class="section" id="intro">
+    <h1 class="page-title">{{ p.h1 | escape }}</h1>
+    {%- for x in p.intro %}
+    <p class="about-text">{{ x | escape }}</p>
+    {%- endfor %}
+  </section>
+
+  <section class="section" id="principles">
+    <h2 class="section-label">{{ p.labels.principles | escape }}</h2>
+    <div class="principles">
+      {%- for x in p.principles %}
+      <div class="principle">
+        <h3 class="principle-title">{{ x.title | escape }}</h3>
+        <p class="about-text">{{ x.text | escape }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </section>
+
+  <section class="section" id="cases">
+    <h2 class="section-label">{{ p.labels.cases | escape }}</h2>
+    <div class="exp-list">
+      {%- for e in p.cases %}
+      <div class="exp-item">
+        <div class="exp-header">
+          <h3 class="exp-company">{{ e.company | escape }}</h3>
+          <span class="exp-dates">{{ e.dates | escape }}</span>
+        </div>
+        <div class="exp-role">{{ e.title | escape }}{% if e.location != "" %} <span class="team-type">· {{ e.location | escape }}</span>{% endif %}</div>
+        <p class="exp-outcome">{{ e.text | escape }}</p>
+        {%- if e.tech.size > 0 %}
+        <div class="exp-tech">{{ e.tech | join: " · " | escape }}</div>
+        {%- endif %}
+      </div>
+      {%- endfor %}
+    </div>
+  </section>
+
+  <section class="section" id="now">
+    <h2 class="section-label">{{ p.labels.now | escape }}</h2>
+    <h3 class="principle-title">{{ p.now.title | escape }}</h3>
+    <p class="about-text">{{ p.now.text | escape }}</p>
+    {%- if p.now.items.size > 0 %}
+    <ul class="now-list">
+      {%- for x in p.now.items %}
+      <li>{{ x | escape }}</li>
+      {%- endfor %}
+    </ul>
+    {%- endif %}
+  </section>
+
+  <section class="section" id="skills">
+    <h2 class="section-label">{{ p.labels.skills | escape }}</h2>
+    <div class="skill-tags">
+      {%- for s in p.skills %}
+      <span class="skill-tag">{{ s | escape }}</span>
+      {%- endfor %}
+    </div>
+  </section>
+
+{% include contact.html %}
+
+</main>
+</body>
+</html>

@@ -11,7 +11,10 @@
     <a href="#experience">{{ d.labels.experience | escape }}</a>
     <a href="#skills">{{ d.labels.skills | escape }}</a>
     <a href="#education">{{ d.labels.education | escape }}</a>
-    <a href="#contact">{{ d.labels.contact | escape }}</a>{% endcapture -%}
+    <a href="#contact">{{ d.labels.contact | escape }}</a>
+    {%- for e in d.pages %}
+    <a href="{{ e[1].url }}">{{ e[1].h1 | escape }}</a>
+    {%- endfor %}{% endcapture -%}
 <!DOCTYPE html>
 <html lang="{{ d.lang }}">
 <head>
@@ -45,7 +48,7 @@
     {%- endfor %}
     <div class="about-tags">
       {%- for k in d.keywords %}
-      <span class="tag">{{ k | escape }}</span>
+      {% if d.links[k] %}<a class="tag tag-link" href="{{ d.links[k] }}">{{ k | escape }}</a>{% else %}<span class="tag">{{ k | escape }}</span>{% endif %}
       {%- endfor %}
     </div>
   </section>
