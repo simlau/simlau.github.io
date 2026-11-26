@@ -51,4 +51,5 @@ The CSP is `default-src 'none'; script-src 'self'; style-src 'self'; img-src 'se
 
 - No inline `<style>`, `style="…"`, `<script>` with code, or `on…=` handlers. CSS goes in `assets/site.css`. JSON-LD (`type="application/ld+json"`) is fine.
 - No external fonts, images, scripts, or analytics without widening the CSP in Cloudflare first.
+- The rule also removes GitHub's `Access-Control-Allow-Origin: *`; nothing fetches this site cross-origin.
 - HSTS has no `includeSubDomains`: `link.simlau.dk` (smtp2go click tracking) is DNS-only and may use plain HTTP.
