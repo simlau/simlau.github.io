@@ -381,7 +381,168 @@
       "Security Architect",
       "Backend Developer",
       "Platform Engineer"
-    ]
+    ],
+    "pages": {
+      "platform-engineering": {
+        "slug": "platform-engineering",
+        "lang": "da",
+        "url": "https://simlau.dk/da/platform-engineering/",
+        "alternates": [
+          {
+            "lang": "en",
+            "url": "https://simlau.dk/platform-engineering/"
+          },
+          {
+            "lang": "da",
+            "url": "https://simlau.dk/da/platform-engineering/"
+          },
+          {
+            "lang": "x-default",
+            "url": "https://simlau.dk/platform-engineering/"
+          }
+        ],
+        "name": "Simon Borgbjerg Laursen",
+        "title": "Freelance platform engineer i Aarhus",
+        "h1": "Platform engineering",
+        "description": "Freelance platform engineer i Aarhus: Kubernetes-operatorer i Go, IaC og GitOps, AWS og Azure, med sikkerhed bygget ind. Platforme til ét team eller mange.",
+        "intro": [
+          "Jeg er backend-udvikler og arkitekt og bygger platforme til udviklingsteams. Målet er, at teams selv kan få det, de har brug for, gennem kode og med sikkerheden bygget ind, så de kan bruge tiden på deres eget produkt.",
+          "Jeg har bygget platforme i meget forskellig størrelse: AWS-infrastruktur og pipelines til et enkelt team og interne platforme på Kubernetes og OpenShift i Bankdata. Jeg skriver selv koden, fra Terraform til operatorer i Go og Java.",
+          "Herunder står, hvordan jeg arbejder, tre cases fra Bankdata, og hvad jeg bygger lige nu."
+        ],
+        "labels": {
+          "principles": "Sådan arbejder jeg",
+          "cases": "Cases",
+          "now": "Lige nu",
+          "skills": "Teknologier",
+          "contact": "Kontakt",
+          "profile": "Hele profilen"
+        },
+        "principles": [
+          {
+            "title": "Platformen skal passe til teamet",
+            "text": "En platform behøver ikke at betyde Kubernetes. På Bankdatas transaktionsmotor var platformen ét teams AWS-opsætning: Terraform, GitHub Actions, ECS Fargate, SQS/SNS og Aurora. God infrastructure as code og gode pipelines gav teamet den oplevelse, en større platform giver mange teams, og erfaringerne blev senere en del af Bankdatas fælles cloudplatform."
+          },
+          {
+            "title": "Byg den sammen med teamene",
+            "text": "En platform, der er designet alene, passer sjældent. I Cloud Application Enablement byggede vi platformen sammen med seks teams fra core banking, platform og digitale kanaler, før den blev rullet bredt ud."
+          },
+          {
+            "title": "Selvbetjening som kode",
+            "text": "Teams beskriver i Git, hvad de har brug for, og en operator opretter det: databaser med brugere, adgangsoplysninger og IAM-adgang, OPA-politikker og identiteter. Ingen tickets og samme resultat hver gang."
+          },
+          {
+            "title": "Klare grænser",
+            "text": "En platform skal også sige, hvad den ikke er. I Bankdata besluttede vi, at Kafka er en platform til datastreaming og CDC og ikke en generel integrationsplatform, så alle data på Kafka kan genskabes fra DB2. Mange teams ville gerne have mere; vi holdt den simpel i starten."
+          },
+          {
+            "title": "Ingen binding til én leverandør",
+            "text": "OPA-platformens kontrolplan var ikke open source, så vi lagde den bag vores egen Kubernetes-operator. Det gjorde det senere muligt for Bankdata at skifte den ud, da leverandøren blev opkøbt og produktet lukket."
+          },
+          {
+            "title": "Sikkerhed er platformens opgave",
+            "text": "Teams skal ikke hver især løse identitet og adgang. I Bankdata bytter workloads deres Kubernetes-identitet til en AWS IAM-rolle, autorisation kører som policy-as-code på OPA, og services taler sammen over mTLS. Sikkerhedsscanning kører i de fælles pipelines; jeg var med til at indføre Trivy i Bankdata for kritiske applikationer, begyndende med vores egen operator. Det er bygget ind i platformen, ikke lagt på bagefter."
+          },
+          {
+            "title": "Du bygger det, du driver det",
+            "text": "Jeg skriver koden og er med til at drive det, jeg bygger: opgraderinger og fejlanalyse. For mig er platform engineering softwareudvikling, ikke drift af clustre."
+          }
+        ],
+        "cases": [
+          {
+            "company": "Bankdata",
+            "title": "Ekstern konsulent",
+            "dates": "jun. 2021 – jul. 2023",
+            "years": "2021 – 2023",
+            "location": "Silkeborg",
+            "text": "Bankdata manglede central autorisation af API'er og platformservices. Vi byggede en policy-as-code-platform på Open Policy Agent med et kontrolplan fra en leverandør, og jeg var lead developer fra proof of concept til produktion. Politikkerne kørte i API-gatewayen og i OPA, som sidecars eller som en service i hvert teams namespace, og Rego-politikker blev testet og udrullet gennem deres egen pipeline. En kollega og jeg designede og byggede en Kubernetes-operator i Go med Kubebuilder, som byggede politikkerne, indlejrede deres data og konfigurerede de rigtige OPA-instanser; den gjorde også kontrolplanet udskifteligt. Brugen voksede fra 2–5 teams til 20–30, da jeg stoppede, og i dag bruger alle Bankdatas ca. 1.000 udviklere den.",
+            "employment": "Kontrakt",
+            "tech": [
+              "OPA/Styra",
+              "Rego",
+              "Go",
+              "Kubebuilder",
+              "Kubernetes",
+              "OAuth2/OIDC",
+              "Java"
+            ]
+          },
+          {
+            "company": "Bankdata",
+            "title": "Lead Developer (ekstern konsulent)",
+            "dates": "aug. 2023 – jul. 2025",
+            "years": "2023 – 2025",
+            "location": "Aarhus",
+            "text": "Bankdatas første applikation med kundedata i produktion på AWS: en eventdrevet motor i Java/Quarkus, der kategoriserer ca. 3,5 milliarder transaktioner for 1,4 millioner kunder. Som lead developer i et team på otte skrev jeg infrastrukturen i Terraform (ECS Fargate, SQS/SNS, S3 og Aurora PostgreSQL med data fra on-premises over IBM MQ) og CI/CD i GitHub Actions. Der fandtes endnu ingen fælles platform, så teamets egen opsætning var platformen. Logik, konfiguration og infrastruktur blev holdt adskilt, så systemet kunne køre on-premises, hybridt eller i AWS. Bankdata tog derefter næste skridt på AWS med OpenShift.",
+            "employment": "Kontrakt",
+            "tech": [
+              "Java",
+              "Quarkus",
+              "AWS (ECS Fargate, S3)",
+              "IBM MQ",
+              "SQS/SNS",
+              "Terraform/OpenTofu"
+            ]
+          },
+          {
+            "company": "Bankdata",
+            "title": "Lead Software Developer",
+            "dates": "aug. 2025 – aug. 2026",
+            "years": "2025 – 2026",
+            "location": "Aarhus",
+            "text": "Jeg ledede et enabling-team på tre, der byggede platformen, som lader applikationsteams bygge nye services uden direkte afhængigheder til DB2 og mainframen. Den kører på OpenShift on-premises og på ROSA i AWS med Amazon MSK, Aurora PostgreSQL Serverless og infrastruktur i Terraform. En kollega og jeg byggede en databaseoperator i Go med Kubebuilder, der opretter databaser med brugere, adgangsoplysninger og AWS IAM-adgang, og jeg byggede en anden operator med Java Operator SDK. Jeg arbejdede også på workload identity, hvor workloads bytter deres Kubernetes-identitet til en AWS IAM-rolle; den var i produktion, da jeg stoppede. Golden path-skabeloner, CI/CD med sikkerhedsscanning og fælles monitorering på den eksisterende Prometheus/Grafana-stak gjorde, at teams kunne tage platformen i brug uden særarbejde.",
+            "employment": "Fuldtid",
+            "tech": [
+              "Java",
+              "Go",
+              "Kafka",
+              "CDC",
+              "PostgreSQL/Aurora",
+              "Kubernetes",
+              "AWS (ECS Fargate, S3)"
+            ]
+          }
+        ],
+        "now": {
+          "title": "Kubernetes Platform & Security Lab",
+          "text": "Et par andre konsulenter og jeg bygger og driver vores egen Kubernetes-platform, fra selve clusteret til apps i daglig brug bag single sign-on. Den holder mig hands-on med alle lag af en platform, ikke kun den del, en kunde hyrer mig til.",
+          "items": [
+            "GitOps med Argo CD: nye team-repos bliver fundet og deployet automatisk. Jeg fik den til at finde nye repos inden for et minut i stedet for 30, og hver ressource får sit repo og commit påskrevet.",
+            "Kafka, hvor services logger ind med deres Kubernetes ServiceAccount-token i stedet for delte hemmeligheder.",
+            "En platform-CA med cert-manager og trust-manager til TLS mod Kafka.",
+            "OpenBao som platformservice med runbooks til restore, snapshots og escrow af seal-nøgler. Login med ServiceAccount-tokens er designet.",
+            "Crypto-shredding med Kroxylicious: Kafka-records blev krypteret pr. nøgle med nøglerne i OpenBao, så data kunne slettes ved at slette nøglen. Den kører ikke længere.",
+            "Monitoring as code: Grafana-dashboards, alert-regler og Alertmanager.",
+            "DevSecOps i de fælles pipeline-skabeloner: hvert image bliver scannet med Trivy, før det bliver pushet, undtagelser ligger i repoet med en udløbsdato, og scanneren er låst til et digest.",
+            "Renovate som platformservice: den holder afhængigheder opdateret på tværs af repos og merger sikre opdateringer under branch protection.",
+            "RBAC og en ValidatingAdmissionPolicy til et driftsværktøj."
+          ]
+        },
+        "skills": [
+          "Kubernetes",
+          "OpenShift",
+          "ROSA",
+          "AKS",
+          "AWS (ECS Fargate, S3)",
+          "Azure",
+          "Terraform/OpenTofu",
+          "Argo CD",
+          "GitOps",
+          "Kubebuilder",
+          "Java Operator SDK",
+          "Go",
+          "Java",
+          "Kafka",
+          "OPA/Styra",
+          "OAuth2/OIDC",
+          "DevSecOps",
+          "GitHub Actions"
+        ]
+      }
+    },
+    "links": {
+      "Platform engineering": "https://simlau.dk/da/platform-engineering/"
+    }
   },
   "en": {
     "lang": "en",
@@ -758,6 +919,167 @@
       "Security Architect",
       "Backend Developer",
       "Platform Engineer"
-    ]
+    ],
+    "pages": {
+      "platform-engineering": {
+        "slug": "platform-engineering",
+        "lang": "en",
+        "url": "https://simlau.dk/platform-engineering/",
+        "alternates": [
+          {
+            "lang": "en",
+            "url": "https://simlau.dk/platform-engineering/"
+          },
+          {
+            "lang": "da",
+            "url": "https://simlau.dk/da/platform-engineering/"
+          },
+          {
+            "lang": "x-default",
+            "url": "https://simlau.dk/platform-engineering/"
+          }
+        ],
+        "name": "Simon Borgbjerg Laursen",
+        "title": "Freelance platform engineer in Aarhus",
+        "h1": "Platform engineering",
+        "description": "Freelance platform engineer in Aarhus: Kubernetes operators in Go, IaC and GitOps, AWS and Azure, with security built in. Platforms for one team or many.",
+        "intro": [
+          "I am a backend developer and architect who builds platforms for development teams. The goal is that teams can get what they need themselves, through code and with security built in, so they can spend their time on their own product.",
+          "I have built platforms of very different sizes: AWS infrastructure and pipelines for a single team, and internal platforms on Kubernetes and OpenShift at Bankdata. I write the code myself, from Terraform to operators in Go and Java.",
+          "Below is how I work, three cases from Bankdata, and what I am building right now."
+        ],
+        "labels": {
+          "principles": "How I work",
+          "cases": "Cases",
+          "now": "Now",
+          "skills": "Technologies",
+          "contact": "Contact",
+          "profile": "Full profile"
+        },
+        "principles": [
+          {
+            "title": "Fit the platform to the team",
+            "text": "A platform does not have to mean Kubernetes. On Bankdata's transaction engine, the platform was one team's AWS setup: Terraform, GitHub Actions, ECS Fargate, SQS/SNS, and Aurora. Good infrastructure as code and good pipelines gave that team the experience a larger platform gives many teams, and the lessons later fed into Bankdata's shared cloud platform."
+          },
+          {
+            "title": "Build it with the teams",
+            "text": "A platform designed in isolation rarely fits. In Cloud Application Enablement, we built the platform together with six teams across core banking, platform, and digital channels before rolling it out widely."
+          },
+          {
+            "title": "Self-service as code",
+            "text": "Teams declare what they need in Git, and an operator creates it: databases with users, credentials, and IAM access, OPA policies, identities. No tickets, and the same result every time."
+          },
+          {
+            "title": "Clear boundaries",
+            "text": "A platform should also say what it is not. At Bankdata, we decided that Kafka is a platform for data streaming and CDC, not a general integration platform, so all data on Kafka can be re-created from DB2. Many teams wanted more; we kept it simple at first."
+          },
+          {
+            "title": "No lock-in to one vendor",
+            "text": "The OPA platform's control plane was not open source, so we put it behind our own Kubernetes operator. That later let Bankdata replace it, after the vendor was acquired and the product discontinued."
+          },
+          {
+            "title": "Security is the platform's job",
+            "text": "Teams should not each have to solve identity and access. At Bankdata, workloads exchange their Kubernetes identity for an AWS IAM role, authorization runs as policy-as-code on OPA, and services talk over mTLS. Security scanning runs in the shared pipelines; I helped introduce Trivy at Bankdata for critical applications, starting with our own operator. It is built into the platform, not added afterwards."
+          },
+          {
+            "title": "You build it, you run it",
+            "text": "I write the code and take part in running what I build: upgrades and root-cause analysis. To me, platform engineering is software engineering, not cluster operations."
+          }
+        ],
+        "cases": [
+          {
+            "company": "Bankdata",
+            "title": "External Consultant",
+            "dates": "Jun 2021 – Jul 2023",
+            "years": "2021 – 2023",
+            "location": "Silkeborg",
+            "text": "Bankdata needed central authorization for APIs and platform services. We built a policy-as-code platform on Open Policy Agent with a vendor control plane, and I was lead developer from proof of concept to production. Policies ran in the API gateway and in OPA, as sidecars or as a service in each team's namespace, and Rego policies were tested and released through their own pipeline. A colleague and I designed and built a Kubernetes operator in Go with Kubebuilder that built the policies, embedded their data, and configured the right OPA instances; it also made the control plane replaceable. Adoption grew from 2–5 teams to 20–30 when I left, and today all of Bankdata's roughly 1,000 developers use it.",
+            "employment": "Contract",
+            "tech": [
+              "OPA/Styra",
+              "Rego",
+              "Go",
+              "Kubebuilder",
+              "Kubernetes",
+              "OAuth2/OIDC",
+              "Java"
+            ]
+          },
+          {
+            "company": "Bankdata",
+            "title": "Lead Developer (External Consultant)",
+            "dates": "Aug 2023 – Jul 2025",
+            "years": "2023 – 2025",
+            "location": "Aarhus",
+            "text": "Bankdata's first application with customer data in production on AWS: an event-driven Java/Quarkus engine that categorizes about 3.5 billion transactions for 1.4 million customers. As lead developer in a team of eight, I wrote the infrastructure in Terraform (ECS Fargate, SQS/SNS, S3, and Aurora PostgreSQL, with data from on-premises over IBM MQ) and the CI/CD in GitHub Actions. There was no shared platform yet, so the team's own setup was the platform. Logic, configuration, and infrastructure were kept apart, so the system could run on-premises, hybrid, or in AWS. Bankdata then took the next step on AWS with OpenShift.",
+            "employment": "Contract",
+            "tech": [
+              "Java",
+              "Quarkus",
+              "AWS (ECS Fargate, S3)",
+              "IBM MQ",
+              "SQS/SNS",
+              "Terraform/OpenTofu"
+            ]
+          },
+          {
+            "company": "Bankdata",
+            "title": "Lead Software Developer",
+            "dates": "Aug 2025 – Aug 2026",
+            "years": "2025 – 2026",
+            "location": "Aarhus",
+            "text": "I led a three-person enabling team building the platform that lets application teams build new services without direct dependencies on DB2 and the mainframe. It runs on OpenShift on-premises and on ROSA in AWS, with Amazon MSK, Aurora PostgreSQL Serverless, and infrastructure in Terraform. A colleague and I built a database operator in Go with Kubebuilder that provisions databases with users, credentials, and AWS IAM access, and I built a second operator with the Java Operator SDK. I also worked on workload identity, where workloads exchange their Kubernetes identity for an AWS IAM role; it was in production when I left. Golden-path templates, CI/CD with security scanning, and shared monitoring on the existing Prometheus/Grafana stack let teams adopt the platform without bespoke work.",
+            "employment": "Full-time",
+            "tech": [
+              "Java",
+              "Go",
+              "Kafka",
+              "CDC",
+              "PostgreSQL/Aurora",
+              "Kubernetes",
+              "AWS (ECS Fargate, S3)"
+            ]
+          }
+        ],
+        "now": {
+          "title": "Kubernetes Platform & Security Lab",
+          "text": "A few other consultants and I build and run our own Kubernetes platform, from the cluster itself to apps in daily use behind single sign-on. It keeps me hands-on with every layer of a platform, not only the part a client hires me for.",
+          "items": [
+            "GitOps with Argo CD: new team repos are picked up and deployed automatically. I made it pick up new repos within a minute instead of 30, and every resource is annotated with its repo and commit.",
+            "Kafka where services log in with their Kubernetes ServiceAccount token instead of shared secrets.",
+            "A platform CA with cert-manager and trust-manager for TLS to Kafka.",
+            "OpenBao as a platform service, with runbooks for restore, snapshots, and escrow of seal keys. Login with ServiceAccount tokens is designed.",
+            "Crypto-shredding with Kroxylicious: Kafka records were encrypted per key, with the keys in OpenBao, so data could be deleted by deleting its key. It is no longer deployed.",
+            "Monitoring as code: Grafana dashboards, alert rules, and Alertmanager.",
+            "DevSecOps in the shared pipeline templates: every image is scanned with Trivy before it is pushed, exceptions live in the repo with an expiry date, and the scanner is pinned by digest.",
+            "Renovate as a platform service: it keeps dependencies up to date across the repos and merges safe updates under branch protection.",
+            "RBAC and a ValidatingAdmissionPolicy for an operations tool."
+          ]
+        },
+        "skills": [
+          "Kubernetes",
+          "OpenShift",
+          "ROSA",
+          "AKS",
+          "AWS (ECS Fargate, S3)",
+          "Azure",
+          "Terraform/OpenTofu",
+          "Argo CD",
+          "GitOps",
+          "Kubebuilder",
+          "Java Operator SDK",
+          "Go",
+          "Java",
+          "Kafka",
+          "OPA/Styra",
+          "OAuth2/OIDC",
+          "DevSecOps",
+          "GitHub Actions"
+        ]
+      }
+    },
+    "links": {
+      "Platform engineering": "https://simlau.dk/platform-engineering/"
+    }
   }
 }
