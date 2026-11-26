@@ -1,122 +1,28 @@
 {%- assign d = site.data.cv[page.lang] -%}
+{%- capture meta_title %}{{ d.name }} | {{ d.title }}{% endcapture -%}
+{%- assign meta_description = d.description -%}
+{%- assign canonical = d.url -%}
+{%- assign alternates = d.alternates -%}
+{%- assign og_type = "profile" -%}
+{%- assign name_tag = "h1" -%}
+{%- assign contact_label = d.labels.contact -%}
+{%- capture nav %}
+    <a href="#about">{{ d.labels.about | escape }}</a>
+    <a href="#experience">{{ d.labels.experience | escape }}</a>
+    <a href="#skills">{{ d.labels.skills | escape }}</a>
+    <a href="#education">{{ d.labels.education | escape }}</a>
+    <a href="#contact">{{ d.labels.contact | escape }}</a>{% endcapture -%}
 <!DOCTYPE html>
 <html lang="{{ d.lang }}">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>{{ d.name | escape }} | {{ d.title | escape }}</title>
-  <meta name="description" content="{{ d.description | escape }}"/>
-  <link rel="canonical" href="{{ d.url }}"/>
-  {%- for a in d.alternates %}
-  <link rel="alternate" hreflang="{{ a.lang }}" href="{{ a.url }}"/>
-  {%- endfor %}
-  <meta property="og:type" content="profile"/>
-  <meta property="og:site_name" content="{{ d.name | escape }}"/>
-  <meta property="og:url" content="{{ d.url }}"/>
-  <meta property="og:title" content="{{ d.name | escape }} | {{ d.title | escape }}"/>
-  <meta property="og:description" content="{{ d.description | escape }}"/>
-  <meta property="og:locale" content="{% if d.lang == 'da' %}da_DK{% else %}en_GB{% endif %}"/>
-  <meta property="og:locale:alternate" content="{% if d.lang == 'da' %}en_GB{% else %}da_DK{% endif %}"/>
-  <meta property="og:image" content="https://simlau.dk/og-image-v5.png"/>
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
-  <meta property="og:image:alt" content="{{ d.name | escape }}"/>
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="{{ d.name | escape }} | {{ d.title | escape }}"/>
-  <meta name="twitter:description" content="{{ d.description | escape }}"/>
-  <meta name="twitter:image" content="https://simlau.dk/og-image-v5.png"/>
-  <link rel="shortcut icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}"/>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-  {
-    "@type": "WebSite",
-    "@id": "https://simlau.dk/#website",
-    "url": "https://simlau.dk/",
-    "name": {{ d.name | jsonify }},
-    "alternateName": ["Simon Laursen", "Simon B. Laursen"],
-    "inLanguage": ["en", "da"],
-    "publisher": { "@id": "https://simlau.dk/#person" }
-  },
-  {
-    "@type": "Person",
-    "@id": "https://simlau.dk/#person",
-    "name": {{ d.name | jsonify }},
-    "alternateName": ["Simon B. Laursen", "Simon Laursen"],
-    "jobTitle": {{ d.title | jsonify }},
-    "description": {{ d.description | jsonify }},
-    "url": "https://simlau.dk/",
-    "image": "https://simlau.dk/me.jpg",
-    "email": {{ d.contact.email | prepend: "mailto:" | jsonify }},
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Aarhus",
-      "addressCountry": "DK"
-    },
-    "alumniOf": {
-      "@type": "CollegeOrUniversity",
-      "name": "Aalborg University"
-    },
-    "knowsAbout": {{ d.keywords | jsonify }},
-    "sameAs": [
-      "https://www.linkedin.com/in/simlau",
-      "https://github.com/simlau",
-      "https://scholar.google.com/citations?user=xbUxPqwAAAAJ",
-      "https://services2.brics.dk/censor/censor-870",
-      "https://aviaia.io/f/mail-6dcf7fd5"
-    ]
-  }
-    ]
-  }
-  </script>
-  <link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}"/>
+{% include head.html %}
 </head>
 <body>
 
 <!-- Content comes from _data/cv.json, generated from cv.yaml by `cvtool site push` (CV-Normal-Long). Edit this file for structure and style only. -->
 
 <!-- SIDEBAR -->
-<aside class="sidebar">
-  <div class="sidebar-header">
-    <img class="sidebar-photo" src="{{ '/me.jpg' | relative_url }}" alt="{{ d.name | escape }}" width="140" height="140"/>
-    <div>
-      <h1 class="sidebar-name">{{ d.name | escape }}</h1>
-      <div class="sidebar-title">{{ d.title | escape | replace: "-", "&#8209;" }}</div>
-      <div class="sidebar-location">{{ d.location | escape }}</div>
-      <nav class="lang-switch" aria-label="Language">
-        {%- for a in d.alternates %}{% if a.lang == 'x-default' %}{% continue %}{% endif %}
-        {%- if a.lang == d.lang %}<span>{{ a.lang | upcase }}</span>{% else %}<a href="{{ a.url }}" hreflang="{{ a.lang }}" lang="{{ a.lang }}">{{ a.lang | upcase }}</a>{% endif %}
-        {%- endfor %}
-      </nav>
-    </div>
-  </div>
-
-  <hr class="sidebar-divider"/>
-
-  <nav class="sidebar-nav">
-    <a href="#about">{{ d.labels.about | escape }}</a>
-    <a href="#experience">{{ d.labels.experience | escape }}</a>
-    <a href="#skills">{{ d.labels.skills | escape }}</a>
-    <a href="#education">{{ d.labels.education | escape }}</a>
-    <a href="#contact">{{ d.labels.contact | escape }}</a>
-  </nav>
-
-  <div class="sidebar-footer">
-    <a href="mailto:{{ d.contact.email }}">
-      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
-      {{ d.contact.email | escape }}
-    </a>
-    <a href="https://{{ d.contact.github }}">
-      <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.483 0-.237-.009-.868-.014-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.417 22 12c0-5.523-4.477-10-10-10z"/></svg>
-      {{ d.contact.github | escape }}
-    </a>
-    <a href="https://{{ d.contact.linkedin }}">
-      <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-      {{ d.contact.linkedin | escape }}
-    </a>
-  </div>
-</aside>
+{% include sidebar.html %}
 
 <!-- MAIN -->
 <main class="main">
@@ -223,28 +129,7 @@
   </section>
 
   <!-- CONTACT -->
-  <section class="section" id="contact">
-    <h2 class="section-label">{{ d.labels.contact | escape }}</h2>
-    <p class="about-text contact-text">{{ d.labels.contact_text | escape }}</p>
-    <div class="contact-links">
-      <a class="contact-link" href="mailto:{{ d.contact.email }}">
-        <span class="contact-link-label">Email</span>
-        {{ d.contact.email | escape }}
-      </a>
-      <a class="contact-link" href="https://{{ d.contact.linkedin }}">
-        <span class="contact-link-label">LinkedIn</span>
-        {{ d.contact.linkedin | escape }}
-      </a>
-      <a class="contact-link" href="https://{{ d.contact.github }}">
-        <span class="contact-link-label">GitHub</span>
-        {{ d.contact.github | escape }}
-      </a>
-      <a class="contact-link" href="{{ d.pdf }}">
-        <span class="contact-link-label">CV</span>
-        {{ d.labels.full_cv | escape }}
-      </a>
-    </div>
-  </section>
+{% include contact.html %}
 
 </main>
 </body>

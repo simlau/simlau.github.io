@@ -1,0 +1,69 @@
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{{ meta_title | escape }}</title>
+  <meta name="description" content="{{ meta_description | escape }}"/>
+  <link rel="canonical" href="{{ canonical }}"/>
+  {%- for a in alternates %}
+  <link rel="alternate" hreflang="{{ a.lang }}" href="{{ a.url }}"/>
+  {%- endfor %}
+  <meta property="og:type" content="{{ og_type }}"/>
+  <meta property="og:site_name" content="{{ d.name | escape }}"/>
+  <meta property="og:url" content="{{ canonical }}"/>
+  <meta property="og:title" content="{{ meta_title | escape }}"/>
+  <meta property="og:description" content="{{ meta_description | escape }}"/>
+  <meta property="og:locale" content="{% if d.lang == 'da' %}da_DK{% else %}en_GB{% endif %}"/>
+  <meta property="og:locale:alternate" content="{% if d.lang == 'da' %}en_GB{% else %}da_DK{% endif %}"/>
+  <meta property="og:image" content="https://simlau.dk/og-image-v5.png"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:image:alt" content="{{ d.name | escape }}"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="{{ meta_title | escape }}"/>
+  <meta name="twitter:description" content="{{ meta_description | escape }}"/>
+  <meta name="twitter:image" content="https://simlau.dk/og-image-v5.png"/>
+  <link rel="shortcut icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}"/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+  {
+    "@type": "WebSite",
+    "@id": "https://simlau.dk/#website",
+    "url": "https://simlau.dk/",
+    "name": {{ d.name | jsonify }},
+    "alternateName": ["Simon Laursen", "Simon B. Laursen"],
+    "inLanguage": ["en", "da"],
+    "publisher": { "@id": "https://simlau.dk/#person" }
+  },
+  {
+    "@type": "Person",
+    "@id": "https://simlau.dk/#person",
+    "name": {{ d.name | jsonify }},
+    "alternateName": ["Simon B. Laursen", "Simon Laursen"],
+    "jobTitle": {{ d.title | jsonify }},
+    "description": {{ d.description | jsonify }},
+    "url": "https://simlau.dk/",
+    "image": "https://simlau.dk/me.jpg",
+    "email": {{ d.contact.email | prepend: "mailto:" | jsonify }},
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Aarhus",
+      "addressCountry": "DK"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Aalborg University"
+    },
+    "knowsAbout": {{ d.keywords | jsonify }},
+    "sameAs": [
+      "https://www.linkedin.com/in/simlau",
+      "https://github.com/simlau",
+      "https://scholar.google.com/citations?user=xbUxPqwAAAAJ",
+      "https://services2.brics.dk/censor/censor-870",
+      "https://aviaia.io/f/mail-6dcf7fd5"
+    ]
+  }
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}"/>
