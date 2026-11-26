@@ -13,7 +13,7 @@
     <a href="#education">{{ d.labels.education | escape }}</a>
     <a href="#contact">{{ d.labels.contact | escape }}</a>
     {%- for e in d.pages %}
-    <a href="{{ e[1].url }}">{{ e[1].h1 | escape }}</a>
+    <a href="{{ e[1].url }}">{{ e[1].keyword | default: e[1].h1 | escape }}</a>
     {%- endfor %}{% endcapture -%}
 <!DOCTYPE html>
 <html lang="{{ d.lang }}">
@@ -67,6 +67,9 @@
         <p class="exp-outcome">{{ e.text | escape }}</p>
         {%- if e.tech.size > 0 %}
         <div class="exp-tech">{{ e.tech | join: " · " | escape }}</div>
+        {%- endif %}
+        {%- if e.link %}
+        <a class="exp-link" href="{{ e.link }}">{{ e.link_text | escape }}</a>
         {%- endif %}
       </div>
       {%- endfor %}

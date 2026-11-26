@@ -9,6 +9,7 @@
 {%- assign contact_label = p.labels.contact -%}
 {%- assign webpage = p -%}
 {%- capture nav %}
+    <a href="#offer">{{ p.offer.title | escape }}</a>
     <a href="#principles">{{ p.labels.principles | escape }}</a>
     <a href="#cases">{{ p.labels.cases | escape }}</a>
     <a href="#now">{{ p.labels.now | escape }}</a>
@@ -35,6 +36,17 @@
     {%- for x in p.intro %}
     <p class="about-text">{{ x | escape }}</p>
     {%- endfor %}
+  </section>
+
+  <section class="section" id="offer">
+    <h2 class="section-label">{{ p.offer.title | escape }}</h2>
+    {%- for x in p.offer.text %}
+    <p class="about-text">{{ x | escape }}</p>
+    {%- endfor %}
+    <a class="availability offer-availability" href="#contact">
+      <span class="availability-dot"></span>
+      <span>{{ d.availability | escape }}</span>
+    </a>
   </section>
 
   <section class="section" id="principles">

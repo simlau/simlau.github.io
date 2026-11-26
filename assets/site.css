@@ -404,3 +404,7 @@ ul.exp-outcome {
 
 .now-list { color: #94a3b8; font-size: 14px; line-height: 1.8; padding-left: 18px; margin-top: 12px; }
 .now-list li + li { margin-top: 4px; }
+.offer-availability { margin-top: 16px; margin-bottom: 0; }
+.exp-link { display: inline-block; margin-top: 8px; color: #38bdf8; font-size: 12px; font-weight: 500; text-decoration: none; }
+.exp-link::after { content: " →"; }
+.exp-link:hover { text-decoration: underline; }
